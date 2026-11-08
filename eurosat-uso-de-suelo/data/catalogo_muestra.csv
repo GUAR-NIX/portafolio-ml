@@ -1,0 +1,51 @@
+archivo_muestra,filename_original,clase_id,clase,nombre_es,macro_categoria
+00_AnnualCrop_01.png,AnnualCrop_test_9.jpg,0,AnnualCrop,Cultivo anual,Agrícola
+00_AnnualCrop_02.png,AnnualCrop_test_34.jpg,0,AnnualCrop,Cultivo anual,Agrícola
+00_AnnualCrop_03.png,AnnualCrop_test_47.jpg,0,AnnualCrop,Cultivo anual,Agrícola
+00_AnnualCrop_04.png,AnnualCrop_test_64.jpg,0,AnnualCrop,Cultivo anual,Agrícola
+00_AnnualCrop_05.png,AnnualCrop_test_66.jpg,0,AnnualCrop,Cultivo anual,Agrícola
+01_Forest_01.png,Forest_test_14.jpg,1,Forest,Bosque denso,Ecosistema natural
+01_Forest_02.png,Forest_test_20.jpg,1,Forest,Bosque denso,Ecosistema natural
+01_Forest_03.png,Forest_test_24.jpg,1,Forest,Bosque denso,Ecosistema natural
+01_Forest_04.png,Forest_test_32.jpg,1,Forest,Bosque denso,Ecosistema natural
+01_Forest_05.png,Forest_test_36.jpg,1,Forest,Bosque denso,Ecosistema natural
+02_HerbaceousVegetation_01.png,HerbaceousVegetation_test_4.jpg,2,HerbaceousVegetation,Vegetación herbácea,Ecosistema natural
+02_HerbaceousVegetation_02.png,HerbaceousVegetation_test_12.jpg,2,HerbaceousVegetation,Vegetación herbácea,Ecosistema natural
+02_HerbaceousVegetation_03.png,HerbaceousVegetation_test_30.jpg,2,HerbaceousVegetation,Vegetación herbácea,Ecosistema natural
+02_HerbaceousVegetation_04.png,HerbaceousVegetation_test_41.jpg,2,HerbaceousVegetation,Vegetación herbácea,Ecosistema natural
+02_HerbaceousVegetation_05.png,HerbaceousVegetation_test_48.jpg,2,HerbaceousVegetation,Vegetación herbácea,Ecosistema natural
+03_Highway_01.png,Highway_test_1.jpg,3,Highway,Autopista / vialidad,Infraestructura antrópica
+03_Highway_02.png,Highway_test_10.jpg,3,Highway,Autopista / vialidad,Infraestructura antrópica
+03_Highway_03.png,Highway_test_40.jpg,3,Highway,Autopista / vialidad,Infraestructura antrópica
+03_Highway_04.png,Highway_test_54.jpg,3,Highway,Autopista / vialidad,Infraestructura antrópica
+03_Highway_05.png,Highway_test_61.jpg,3,Highway,Autopista / vialidad,Infraestructura antrópica
+04_Industrial_01.png,Industrial_test_0.jpg,4,Industrial,Zona industrial,Infraestructura antrópica
+04_Industrial_02.png,Industrial_test_2.jpg,4,Industrial,Zona industrial,Infraestructura antrópica
+04_Industrial_03.png,Industrial_test_5.jpg,4,Industrial,Zona industrial,Infraestructura antrópica
+04_Industrial_04.png,Industrial_test_7.jpg,4,Industrial,Zona industrial,Infraestructura antrópica
+04_Industrial_05.png,Industrial_test_18.jpg,4,Industrial,Zona industrial,Infraestructura antrópica
+05_Pasture_01.png,Pasture_test_16.jpg,5,Pasture,Pastizal ganadero,Agrícola
+05_Pasture_02.png,Pasture_test_28.jpg,5,Pasture,Pastizal ganadero,Agrícola
+05_Pasture_03.png,Pasture_test_38.jpg,5,Pasture,Pastizal ganadero,Agrícola
+05_Pasture_04.png,Pasture_test_45.jpg,5,Pasture,Pastizal ganadero,Agrícola
+05_Pasture_05.png,Pasture_test_52.jpg,5,Pasture,Pastizal ganadero,Agrícola
+06_PermanentCrop_01.png,PermanentCrop_test_19.jpg,6,PermanentCrop,Cultivo permanente,Agrícola
+06_PermanentCrop_02.png,PermanentCrop_test_23.jpg,6,PermanentCrop,Cultivo permanente,Agrícola
+06_PermanentCrop_03.png,PermanentCrop_test_43.jpg,6,PermanentCrop,Cultivo permanente,Agrícola
+06_PermanentCrop_04.png,PermanentCrop_test_46.jpg,6,PermanentCrop,Cultivo permanente,Agrícola
+06_PermanentCrop_05.png,PermanentCrop_test_53.jpg,6,PermanentCrop,Cultivo permanente,Agrícola
+07_Residential_01.png,Residential_test_3.jpg,7,Residential,Zona residencial,Infraestructura antrópica
+07_Residential_02.png,Residential_test_15.jpg,7,Residential,Zona residencial,Infraestructura antrópica
+07_Residential_03.png,Residential_test_21.jpg,7,Residential,Zona residencial,Infraestructura antrópica
+07_Residential_04.png,Residential_test_22.jpg,7,Residential,Zona residencial,Infraestructura antrópica
+07_Residential_05.png,Residential_test_27.jpg,7,Residential,Zona residencial,Infraestructura antrópica
+08_River_01.png,River_test_11.jpg,8,River,Río / cauce fluvial,Cuerpo de agua
+08_River_02.png,River_test_17.jpg,8,River,Río / cauce fluvial,Cuerpo de agua
+08_River_03.png,River_test_31.jpg,8,River,Río / cauce fluvial,Cuerpo de agua
+08_River_04.png,River_test_39.jpg,8,River,Río / cauce fluvial,Cuerpo de agua
+08_River_05.png,River_test_50.jpg,8,River,Río / cauce fluvial,Cuerpo de agua
+09_SeaLake_01.png,SeaLake_test_6.jpg,9,SeaLake,Mar / cuerpo lacustre,Cuerpo de agua
+09_SeaLake_02.png,SeaLake_test_8.jpg,9,SeaLake,Mar / cuerpo lacustre,Cuerpo de agua
+09_SeaLake_03.png,SeaLake_test_13.jpg,9,SeaLake,Mar / cuerpo lacustre,Cuerpo de agua
+09_SeaLake_04.png,SeaLake_test_25.jpg,9,SeaLake,Mar / cuerpo lacustre,Cuerpo de agua
+09_SeaLake_05.png,SeaLake_test_26.jpg,9,SeaLake,Mar / cuerpo lacustre,Cuerpo de agua

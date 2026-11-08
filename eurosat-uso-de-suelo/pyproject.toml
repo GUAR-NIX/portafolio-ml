@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eurosat_suelo"
+version = "2.0.0"
+description = "Clasificación de uso de suelo con Sentinel-2 (EuroSAT, particiones oficiales 16.200/5.400/5.400): índices espectrales vs Transfer Learning en CPU, calibración y umbral en validación, IC bootstrap, ONNX, Grad-CAM, API FastAPI y app Streamlit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Portafolio ML"}]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "-q"

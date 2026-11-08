@@ -1,0 +1,8 @@
+etapa,filas,importe_gbp,pct_filas
+0. Filas crudas totales,1067371,19287250.568,100.0
+1. Excluidas: sin Customer ID (invitado),243007,2638958.1799999997,22.766872999172733
+2. Excluidas: facturas de cancelación (C*),18744,-1095136.79,1.7560904315369257
+"3. Excluidas: códigos contables/envío (POST, M, D...)",2925,308964.448,0.2740377994155734
+4. Excluidas: cantidad <= 0 o precio <= 0,61,0.0,0.0057149763296923
+5. Excluidas: líneas duplicadas exactas,26055,365882.01,2.4410443978710306
+6. Líneas limpias retenidas,776579,17068582.72,72.75623939567404

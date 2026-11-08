@@ -1,0 +1,18 @@
+{
+  "dataset": "EuroSAT RGB (Sentinel-2 MSI, 64x64 px, 10 m/px)",
+  "fuente_oficial": "Helber et al. (2019), IEEE JSTARS / HuggingFace timm/eurosat-rgb",
+  "licencia": "MIT",
+  "total_imagenes_oficial": 27000,
+  "conteo_splits_oficial": {
+    "train": 16200,
+    "val": 5400,
+    "test": 5400
+  },
+  "numero_clases": 10,
+  "total_subconjunto_modelado": 27000,
+  "n_train": 16200,
+  "n_val": 5400,
+  "n_test": 5400,
+  "pct_velo_atmosferico_global": 30.88,
+  "muestra_versionada_png": 50
+}

@@ -1,0 +1,33 @@
+== Validación: entrenar < 2017-07-01, evaluar 2017-07 → 2017-12
+  {'corte': '2017-07-01', 'fin': '2018-01-01', 'calificaciones_entrenamiento': 21716191, 'positivos_entrenamiento': 10808900, 'usuarios_entrenamiento': 146859, 'items_catalogo': 16314, 'calificaciones_ventana': 772509, 'positivos_ventana': 375891, 'usuarios_existentes_evaluables': 3907, 'usuarios_nuevos_evaluables': 3557, 'positivos_ventana_fuera_de_catalogo_pct': 3.1}
+  mejor ALS: {'factores': 128, 'regularizacion': 1.0, 'alpha': 2.0, 'bm25': True}
+  mejor contenido: {'peso_generos': 0.2, 'peso_popularidad': 0.3}
+.venv\Lib\site-packages\implicit\cpu\als.py:96: RuntimeWarning: OpenBLAS is configured to use 12 threads. It is highly recommended to disable its internal threadpool by setting the environment variable 'OPENBLAS_NUM_THREADS=1' or by calling 'threadpoolctl.threadpool_limits(1, "blas")'. Having OpenBLAS use a threadpool can lead to severe performance issues here.
+  check_blas_config()
+  Híbrido {'k': 30, 'peso_reciente': 2.0} → NDCG todos 0.2495
+  Híbrido {'k': 100, 'peso_reciente': 2.0} → NDCG todos 0.2464
+  Híbrido {'k': 300, 'peso_reciente': 1.0} → NDCG todos 0.2410
+  Híbrido {'k': 300, 'peso_reciente': 2.0} → NDCG todos 0.2383
+  mejor híbrido: {'k': 30.0, 'peso_reciente': 2.0}
+  EASE λ=200.0 → NDCG existentes 0.1301
+  EASE λ=1000.0 → NDCG existentes 0.1304
+  EASE λ=5000.0 → NDCG existentes 0.1251
+  mejor λ de EASE: 1000.0
+== Prueba: entrenar < 2018-01-01, evaluar 2018-01 → 2019-11 (una sola vez)
+  {'corte': '2018-01-01', 'fin': '2019-12-01', 'calificaciones_entrenamiento': 22488700, 'positivos_entrenamiento': 11182187, 'usuarios_entrenamiento': 150543, 'items_catalogo': 17102, 'calificaciones_ventana': 2511395, 'positivos_ventana': 1245580, 'usuarios_existentes_evaluables': 6267, 'usuarios_nuevos_evaluables': 11710, 'positivos_ventana_fuera_de_catalogo_pct': 6.32}
+  Popularidad global: NDCG@10 = 0.2141 (3 s)
+  Popularidad reciente: NDCG@10 = 0.2806 (3 s)
+  ALS implícito: NDCG@10 = 0.2904 (9 s)
+  Contenido (géneros + genome): NDCG@10 = 0.2660 (9 s)
+  Híbrido (ALS + contenido + recientes): NDCG@10 = 0.3283 (30 s)
+  Contenido solo con géneros elegidos: NDCG@10 = 0.2254
+  EASE (referencia): NDCG@10 = 0.3086
+== Modelo final con todos los datos (hasta 2019-11-21)
+  figura: actividad_temporal
+  figura: ndcg_por_segmento
+  figura: exactitud_vs_popularidad
+  figura: busqueda_als
+  figura: hibrido_rejilla
+  figura: cola_larga
+  figura: peso_als
+Listo en 13.7 min

@@ -1,0 +1,23 @@
+# Versiones con las que se ejecutó y probó el proyecto (Python 3.14)
+# Modelos y datos
+implicit==0.7.3
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.0.6
+pyarrow==26.0.0
+scikit-learn==1.9.1
+threadpoolctl==3.7.0
+matplotlib==3.11.2
+# Servicio y app
+fastapi==0.150.0
+uvicorn==0.54.0
+pydantic==2.14.1
+httpx==0.28.1
+# Descarga: certificados raíz de Mozilla si el sistema no valida files.grouplens.org
+certifi==2026.10.23
+streamlit==1.66.0
+# Notebooks y pruebas
+jupyter==1.1.1
+nbconvert==7.17.2
+nbformat==5.11.1
+pytest==9.1.1

@@ -1,0 +1,97 @@
+{
+  "nombre_modelo": "clv_bgnbd_gamma_gamma",
+  "version": "1.1.0",
+  "fuente_datos": "UCI Online Retail II (01/12/2009 - 09/12/2011)",
+  "ventana_calibracion": "2009-12-01 a 2011-06-09 (555 días)",
+  "ventana_holdout": "2011-06-10 a 2011-12-09 (183 días = 6 meses)",
+  "clientes_calibracion": 4944,
+  "clientes_repetidores": 3336,
+  "tasa_recompra_holdout": 0.5202,
+  "parametros_bgnbd": {
+    "r": 0.683,
+    "alpha_semanas": 9.4806,
+    "a": 0.1518,
+    "b": 3.3057,
+    "log_verosimilitud": -58257.11,
+    "tasa_media_compra_semanal": 0.072,
+    "prob_media_abandono_post_compra": 0.0439
+  },
+  "parametros_gamma_gamma": {
+    "p": 2.2995,
+    "q": 3.8383,
+    "gamma": 484.87,
+    "ticket_medio_poblacional_gbp": 392.81,
+    "log_verosimilitud": -22486.4
+  },
+  "supuestos_negocio": {
+    "horizonte_meses": 6,
+    "margen_bruto": 0.3,
+    "tasa_descuento_mensual": 0.01,
+    "costo_contacto_retencion_gbp": 6.0,
+    "efectividad_rescate_supuesta": 0.25,
+    "zona_riesgo": "0,20 <= P(vivo) < 0,70 y frecuencia >= 2",
+    "tope_ticket_mayorista_gbp": 3000.0
+  },
+  "metricas_holdout": [
+    {
+      "modelo": "Ritmo histórico (heurística)",
+      "auc_recompra": 0.7623112045927212,
+      "brier_recompra": 0.2178122669370197,
+      "mae_compras": 1.063592661075498,
+      "rmse_compras": 1.8612960189886827,
+      "sesgo_compras_pct": -3.2075121026434914,
+      "spearman_compras": 0.5912871500447509,
+      "mae_ingreso_gbp": 481.9080223294548,
+      "rmse_ingreso_gbp": 1275.4544809499505,
+      "error_cartera_pct": -12.397269872195373,
+      "spearman_ingreso": 0.608182207736276,
+      "captura_top10_pct": 55.22796789765264,
+      "captura_top20_pct": 70.68791536704224
+    },
+    {
+      "modelo": "Tabla RFM por tramos",
+      "auc_recompra": 0.7742677826325272,
+      "brier_recompra": 0.20056951559518602,
+      "mae_compras": 1.1911874971592205,
+      "rmse_compras": 2.742085773545195,
+      "sesgo_compras_pct": -21.825870079798857,
+      "spearman_compras": 0.5655040313358353,
+      "mae_ingreso_gbp": 665.0296299332779,
+      "rmse_ingreso_gbp": 2336.213017351234,
+      "error_cartera_pct": -23.802831099001963,
+      "spearman_ingreso": 0.5464615726962919,
+      "captura_top10_pct": 50.9716333904081,
+      "captura_top20_pct": 64.60824961637408
+    },
+    {
+      "modelo": "LightGBM supervisado",
+      "auc_recompra": 0.799598953183722,
+      "brier_recompra": 0.18972517379101755,
+      "mae_compras": 1.0967683853734118,
+      "rmse_compras": 2.07357799533885,
+      "sesgo_compras_pct": -26.930336147483736,
+      "spearman_compras": 0.606559224096623,
+      "mae_ingreso_gbp": 526.7146288944834,
+      "rmse_ingreso_gbp": 1728.07383859805,
+      "error_cartera_pct": -40.92310547558052,
+      "spearman_ingreso": 0.6025096908276304,
+      "captura_top10_pct": 56.51341076365773,
+      "captura_top20_pct": 71.60397727684304
+    },
+    {
+      "modelo": "BG/NBD + Gamma-Gamma",
+      "auc_recompra": 0.8100558878989979,
+      "brier_recompra": 0.17736043664016765,
+      "mae_compras": 1.0450048601369688,
+      "rmse_compras": 1.7836336503381538,
+      "sesgo_compras_pct": -1.3945894506564769,
+      "spearman_compras": 0.6244794984659778,
+      "mae_ingreso_gbp": 485.8186443359799,
+      "rmse_ingreso_gbp": 1278.6055963269569,
+      "error_cartera_pct": -10.04186757680437,
+      "spearman_ingreso": 0.6355222671496945,
+      "captura_top10_pct": 57.070468774196904,
+      "captura_top20_pct": 72.02426644395695
+    }
+  ]
+}

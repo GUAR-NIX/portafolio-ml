@@ -1,0 +1,21 @@
+comparacion,modelo_a,modelo_b,metrica,diferencia_media,ic_inf,ic_sup,prob_a_mejor,significativa
+hibrido − lgbm_pesos,hibrido,lgbm_pesos,auprc,-0.0024950873550465954,-0.0165257111255773,0.011669066050529728,0.356,False
+lgbm_pesos − lof,lgbm_pesos,lof,auprc,0.28415343379747593,0.1837809960161573,0.3867674828660006,1.0,True
+lgbm_pesos − logistica,lgbm_pesos,logistica,auprc,0.09758543698058057,0.034330250423563434,0.17207257306233734,1.0,True
+lgbm_pesos − lgbm_submuestreo,lgbm_pesos,lgbm_submuestreo,auprc,-0.024521149153724706,-0.0627429139982822,0.004368241394819305,0.06,False
+lgbm_pesos − lgbm_sin_ajuste,lgbm_pesos,lgbm_sin_ajuste,auprc,-0.018559708992577407,-0.054064173850319606,0.010318735914921525,0.113,False
+lgbm_submuestreo − lgbm_sin_ajuste,lgbm_submuestreo,lgbm_sin_ajuste,auprc,0.005961440161147301,-0.004983506725761764,0.019641576392630023,0.836,False
+logistica − lof,logistica,lof,auprc,0.18656799681689537,0.10297058059804393,0.27938793429481623,1.0,True
+lof − autoencoder,lof,autoencoder,auprc,0.41058193006281424,0.30017712030131466,0.5166769206988595,1.0,True
+autoencoder − if_normales,autoencoder,if_normales,auprc,0.05377074077980361,0.03495683378330254,0.07662417601249143,1.0,True
+if_normales − if_sin_etiquetas,if_normales,if_sin_etiquetas,auprc,-0.0035565321733422917,-0.006282516689960739,-0.0014001593373345357,0.0,True
+hibrido − lgbm_pesos,hibrido,lgbm_pesos,precision_at_80,-0.003996630926780002,-0.03749999999999998,0.028072869617585067,0.27,False
+lgbm_pesos − lof,lgbm_pesos,lof,precision_at_80,0.1609634455278093,0.06548762121657362,0.25723379629629617,1.0,True
+lgbm_pesos − logistica,lgbm_pesos,logistica,precision_at_80,0.05938052027212643,-0.011905028651190119,0.17500000000000004,0.94,False
+lgbm_pesos − lgbm_submuestreo,lgbm_pesos,lgbm_submuestreo,precision_at_80,-0.018033679157597043,-0.0649935072267389,0.02499999999999991,0.144,False
+lgbm_pesos − lgbm_sin_ajuste,lgbm_pesos,lgbm_sin_ajuste,precision_at_80,-0.009427271472307212,-0.050000000000000044,0.03141102884243124,0.246,False
+lgbm_submuestreo − lgbm_sin_ajuste,lgbm_submuestreo,lgbm_sin_ajuste,precision_at_80,0.008606407685289834,-0.025000000000000022,0.049398148148148135,0.569,False
+logistica − lof,logistica,lof,precision_at_80,0.10158292525568288,0.01218768366147518,0.1875,0.986,True
+lof − autoencoder,lof,autoencoder,precision_at_80,0.5137088759516363,0.3822492283950617,0.6625,1.0,True
+autoencoder − if_normales,autoencoder,if_normales,precision_at_80,0.03705944119101259,0.0,0.1125,0.615,False
+if_normales − if_sin_etiquetas,if_normales,if_sin_etiquetas,precision_at_80,-0.0008714768287241105,-0.0125,0.0,0.0,False

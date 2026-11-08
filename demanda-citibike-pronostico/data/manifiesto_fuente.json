@@ -1,0 +1,136 @@
+{
+  "fuente_viajes": "Citi Bike System Data (Lyft)",
+  "url_viajes": "https://s3.amazonaws.com/tripdata/",
+  "licencia_viajes": "Citi Bike Trip Data License (uso público con atribución)",
+  "fuente_clima": "Open-Meteo Historical API",
+  "url_clima": "https://archive-api.open-meteo.com/v1/archive",
+  "licencia_clima": "CC BY 4.0",
+  "consultado_utc": "2026-10-25T17:10:09.076840+00:00",
+  "meses": [
+    "202401",
+    "202402",
+    "202403",
+    "202404",
+    "202405",
+    "202406",
+    "202407",
+    "202408",
+    "202409",
+    "202410",
+    "202411",
+    "202412"
+  ],
+  "archivos_viajes": [
+    {
+      "mes": "202401",
+      "csvs": [
+        "202401-citibike-tripdata_2.csv",
+        "202401-citibike-tripdata_1.csv"
+      ]
+    },
+    {
+      "mes": "202402",
+      "csvs": [
+        "202402-citibike-tripdata_1.csv",
+        "202402-citibike-tripdata_2.csv",
+        "202402-citibike-tripdata_3.csv"
+      ]
+    },
+    {
+      "mes": "202403",
+      "csvs": [
+        "202403-citibike-tripdata_3.csv",
+        "202403-citibike-tripdata_2.csv",
+        "202403-citibike-tripdata_1.csv"
+      ]
+    },
+    {
+      "mes": "202404",
+      "csvs": [
+        "202404-citibike-tripdata_4.csv",
+        "202404-citibike-tripdata_1.csv",
+        "202404-citibike-tripdata_2.csv",
+        "202404-citibike-tripdata_3.csv"
+      ]
+    },
+    {
+      "mes": "202405",
+      "csvs": [
+        "202405-citibike-tripdata_3.csv",
+        "202405-citibike-tripdata_2.csv",
+        "202405-citibike-tripdata_1.csv",
+        "202405-citibike-tripdata_5.csv",
+        "202405-citibike-tripdata_4.csv"
+      ]
+    },
+    {
+      "mes": "202406",
+      "csvs": [
+        "202406-citibike-tripdata_5.csv",
+        "202406-citibike-tripdata_4.csv",
+        "202406-citibike-tripdata_1.csv",
+        "202406-citibike-tripdata_3.csv",
+        "202406-citibike-tripdata_2.csv"
+      ]
+    },
+    {
+      "mes": "202407",
+      "csvs": [
+        "202407-citibike-tripdata_2.csv",
+        "202407-citibike-tripdata_3.csv",
+        "202407-citibike-tripdata_1.csv",
+        "202407-citibike-tripdata_4.csv",
+        "202407-citibike-tripdata_5.csv"
+      ]
+    },
+    {
+      "mes": "202408",
+      "csvs": [
+        "202408-citibike-tripdata_3.csv",
+        "202408-citibike-tripdata_2.csv",
+        "202408-citibike-tripdata_1.csv",
+        "202408-citibike-tripdata_5.csv",
+        "202408-citibike-tripdata_4.csv"
+      ]
+    },
+    {
+      "mes": "202409",
+      "csvs": [
+        "202409-citibike-tripdata_4.csv",
+        "202409-citibike-tripdata_5.csv",
+        "202409-citibike-tripdata_1.csv",
+        "202409-citibike-tripdata_2.csv",
+        "202409-citibike-tripdata_3.csv"
+      ]
+    },
+    {
+      "mes": "202410",
+      "csvs": [
+        "202410-citibike-tripdata_6.csv",
+        "202410-citibike-tripdata_4.csv",
+        "202410-citibike-tripdata_5.csv",
+        "202410-citibike-tripdata_1.csv",
+        "202410-citibike-tripdata_2.csv",
+        "202410-citibike-tripdata_3.csv"
+      ]
+    },
+    {
+      "mes": "202411",
+      "csvs": [
+        "202411-citibike-tripdata_3.csv",
+        "202411-citibike-tripdata_2.csv",
+        "202411-citibike-tripdata_1.csv",
+        "202411-citibike-tripdata_4.csv"
+      ]
+    },
+    {
+      "mes": "202412",
+      "csvs": [
+        "202412-citibike-tripdata_1.csv",
+        "202412-citibike-tripdata_3.csv",
+        "202412-citibike-tripdata_2.csv"
+      ]
+    }
+  ],
+  "archivo_clima": "clima_nyc_horario.csv"
+}

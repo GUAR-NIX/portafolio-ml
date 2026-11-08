@@ -1,0 +1,19 @@
+# Datos crudos: se bajan con  python descargar_datos.py
+/data/raw/
+
+# models/ y reports/ SÍ se versionan: la API, las pruebas y el README los usan
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.pytest_tmp*/
+
+# Editores y sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

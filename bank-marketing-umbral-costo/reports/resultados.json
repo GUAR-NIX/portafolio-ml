@@ -1,0 +1,95 @@
+{
+  "metricas_prueba": {
+    "auc": 0.8146,
+    "average_precision": 0.4896,
+    "brier": 0.0751,
+    "brier_skill": 0.2492,
+    "log_loss": 0.2649,
+    "prob_media": 0.112,
+    "tasa_real": 0.1127
+  },
+  "politica_prueba": {
+    "llamadas": 1548.0,
+    "pct_llamados": 18.8,
+    "exitos": 608.0,
+    "pct_exitos_capturados": 65.52,
+    "conversion_pct": 39.28,
+    "ganancia": 36256.0,
+    "ganancia_por_1000": 4402.14
+  },
+  "llamar_a_todos_prueba": {
+    "llamadas": 8236.0,
+    "pct_llamados": 100.0,
+    "exitos": 928.0,
+    "pct_exitos_capturados": 100.0,
+    "conversion_pct": 11.27,
+    "ganancia": 8352.0,
+    "ganancia_por_1000": 1014.08
+  },
+  "lift_prueba": {
+    "LightGBM (final)": {
+      "capturado_top10": 47.41,
+      "capturado_top20": 66.06,
+      "capturado_top30": 74.25,
+      "capturado_top50": 84.05,
+      "lift_top10": 4.74
+    },
+    "Regresión logística": {
+      "capturado_top10": 44.4,
+      "capturado_top20": 64.44,
+      "capturado_top30": 72.63,
+      "capturado_top50": 83.51,
+      "lift_top10": 4.44
+    },
+    "Regla por segmento": {
+      "capturado_top10": 27.69,
+      "capturado_top20": 38.25,
+      "capturado_top30": 48.81,
+      "capturado_top50": 69.83,
+      "lift_top10": 2.77
+    }
+  },
+  "umbral": 0.11,
+  "calibracion_oof_brier": {
+    "sin calibrar": 0.07695,
+    "platt": 0.07695,
+    "isotonica": 0.0771
+  },
+  "fuga": {
+    "Con duración (fuga)": {
+      "auc": 0.9522,
+      "average_precision": 0.6734
+    },
+    "Con nº de llamadas de la campaña": {
+      "auc": 0.8152,
+      "average_precision": 0.4945
+    },
+    "Sin variables con fuga (modelo final)": {
+      "auc": 0.8146,
+      "average_precision": 0.4896
+    }
+  },
+  "temporal": {
+    "filas_pasado": 30421,
+    "filas_futuro": 10755,
+    "tasa_pasado": 0.0627,
+    "tasa_futuro": 0.254,
+    "auc": 0.704,
+    "average_precision": 0.4657,
+    "auc_reentrenado": 0.7894,
+    "average_precision_reentrenado": 0.58,
+    "brier_fijo": 0.1949,
+    "brier_recalibrado": 0.1732,
+    "brier_reentrenado": 0.1491,
+    "prob_media_fijo": 0.1167,
+    "prob_media_recalibrado": 0.214,
+    "ganancia_fijo": 80120.0,
+    "ganancia_recalibrado": 126496.0,
+    "ganancia_reentrenado": 137112.0,
+    "ganancia_oraculo": 196704.0,
+    "ganancia_todos": 132520.0,
+    "pct_llamados_fijo": 21.06,
+    "pct_llamados_recalibrado": 41.1715,
+    "pct_llamados_reentrenado": 46.1274
+  }
+}

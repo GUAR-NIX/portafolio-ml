@@ -1,0 +1,18 @@
+[project]
+name = "clv"
+version = "1.1.0"
+description = "Segmentación y valor de vida del cliente (CLV) con BG/NBD y Gamma-Gamma sobre UCI Online Retail II"
+authors = [{ name = "Erick Guarnizo" }]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+testpaths = ["tests"]
+filterwarnings = ["ignore::Warning"]

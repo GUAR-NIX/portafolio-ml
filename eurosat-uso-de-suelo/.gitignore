@@ -1,0 +1,28 @@
+# Datos crudos y caché pesada (> 50 MB)
+data/raw/
+data/cache/
+
+# Los modelos SÍ se versionan (joblib ~5 MB, .pt ~4,4 MB, 2 ONNX ~8 MB): la API y la app funcionan en un clon fresco.
+# Solo se ignoran checkpoints intermedios.
+models/*.pth
+models/*_checkpoint*
+
+# Entorno virtual y caché de Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+dist/
+build/
+
+# Pruebas temporales, editores y sistema
+.pytest_tmp*/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

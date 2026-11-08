@@ -1,0 +1,26 @@
+# Datos crudos (~73 MB): se regeneran con `python descargar_datos.py`
+data/raw/*
+!data/raw/.gitkeep
+
+# Los modelos SÍ se versionan (LightGBM + Isolation Forest + autoencoder en .npz, < 5 MB en total):
+# la API y la app funcionan en un clon sin reentrenar.
+
+# Entorno virtual y caché de Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+dist/
+build/
+
+# Pruebas temporales, editores y sistema
+.pytest_tmp*/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

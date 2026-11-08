@@ -1,0 +1,6 @@
+id,modelo,exactitud_top1,exactitud_top2,f1_macro,f1_ponderado,log_loss,brier_multiclase,ece_calibracion,errores_misma_macro,errores_inter_macro,tasa_error_critico_pct,costo_por_1000_usd,latencia_ms_img,parametros_entrenados,exactitud_ic95_inf,exactitud_ic95_sup,f1_macro_ic95_inf,f1_macro_ic95_sup,costo_1000_ic95_inf,costo_1000_ic95_sup
+m1,1 · Espectral: 54 índices + textura + GBDT,0.903,0.9763,0.8988,0.9029,0.2703,0.1389,0.0116,150,374,6.93,10668.52,0.963,43236,0.895,0.9109,0.8905,0.907,9696.13,11621.3
+m2,2 · MobileNetV3 congelada + sonda lineal,0.9067,0.9741,0.9035,0.9067,0.2883,0.1421,0.0077,157,347,6.43,10013.89,0.692,5770,0.8983,0.9146,0.895,0.9115,9061.11,10992.75
+m3,3 · Fusión: embeddings CNN + 54 índices + MLP,0.9433,0.988,0.9419,0.9433,0.1689,0.0822,0.0062,80,226,4.19,6377.78,1.638,195722,0.9372,0.9494,0.9355,0.9481,5619.44,7136.11
+m4,4 · Fine-tuning parcial MobileNetV3 (D4 + TTA),0.9652,0.9935,0.9639,0.9651,0.1072,0.0524,0.0061,48,140,2.59,3940.74,1.158,886770,0.96,0.9698,0.9586,0.9687,3350.76,4556.48
+m5,5 · Ensamble M3 + M4 (calibrado con temperatura),0.9698,0.9941,0.9688,0.9698,0.0966,0.0474,0.0059,45,118,2.19,3350.93,2.796,1082492,0.965,0.9741,0.9639,0.9732,2812.8,3914.81

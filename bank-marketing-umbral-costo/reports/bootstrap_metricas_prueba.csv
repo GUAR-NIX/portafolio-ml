@@ -1,0 +1,16 @@
+comparacion,metrica,estimado,ic_bajo,ic_alto,n_remuestras
+Regla por segmento,auc,0.67516,0.65838,0.69253,2000
+Regresión logística,auc,0.80084,0.78393,0.81832,2000
+LightGBM calibrado (final),auc,0.81458,0.79801,0.83166,2000
+LightGBM calibrado (final) − Regresión logística,auc,0.01373,0.00772,0.01998,2000
+LightGBM calibrado (final) − Regla por segmento,auc,0.13942,0.12409,0.15401,2000
+Regla por segmento,average_precision,0.24578,0.22143,0.27087,2000
+Regresión logística,average_precision,0.44359,0.40844,0.4803,2000
+LightGBM calibrado (final),average_precision,0.48958,0.45509,0.52476,2000
+LightGBM calibrado (final) − Regresión logística,average_precision,0.04598,0.03316,0.05907,2000
+LightGBM calibrado (final) − Regla por segmento,average_precision,0.2438,0.22072,0.2674,2000
+Regla por segmento,brier,0.08983,0.08496,0.09458,2000
+Regresión logística,brier,0.07848,0.07401,0.08274,2000
+LightGBM calibrado (final),brier,0.07506,0.07063,0.07928,2000
+LightGBM calibrado (final) − Regresión logística,brier,-0.00342,-0.00439,-0.00248,2000
+LightGBM calibrado (final) − Regla por segmento,brier,-0.01477,-0.01701,-0.01243,2000

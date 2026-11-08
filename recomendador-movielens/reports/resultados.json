@@ -1,0 +1,68 @@
+{
+  "particion": {
+    "corte": "2018-01-01",
+    "fin": "2019-12-01",
+    "calificaciones_entrenamiento": 22488700,
+    "positivos_entrenamiento": 11182187,
+    "usuarios_entrenamiento": 150543,
+    "items_catalogo": 17102,
+    "calificaciones_ventana": 2511395,
+    "positivos_ventana": 1245580,
+    "usuarios_existentes_evaluables": 6267,
+    "usuarios_nuevos_evaluables": 11710,
+    "positivos_ventana_fuera_de_catalogo_pct": 6.32
+  },
+  "usuarios_evaluados": {
+    "existentes": 6267,
+    "nuevos": 11710
+  },
+  "segundos_ajuste": {
+    "ALS": 38.7,
+    "Contenido": 0.6,
+    "EASE": 102.1
+  },
+  "varianza_explicada_genome_svd": 0.7276,
+  "peso_als_mediano_por_segmento": {
+    "medios (21-100)": 0.6549999713897705,
+    "muchos (>100)": 0.8830000162124634,
+    "nuevos (onboarding)": 0.11800000071525574,
+    "pocos (1-20)": 0.3019999861717224
+  },
+  "ejemplo": {
+    "usuario": 3,
+    "le_gusto_reciente": [
+      "Inside Out (2015)",
+      "Ghost in the Shell 2.0 (2008)",
+      "Larry David: Curb Your Enthusiasm (1999)",
+      "Ghost in the Shell: The New Movie (2015)",
+      "Death Note Rewrite: Genshisuru Kami (2007)",
+      "Arrival (2016)",
+      "Rogue One: A Star Wars Story (2016)",
+      "Logan (2017)"
+    ],
+    "recomendado_hibrido": [
+      "Up (2009)",
+      "Fargo (1996)",
+      "Matrix Reloaded, The (2003)",
+      "Moon (2009)",
+      "Seven (a.k.a. Se7en) (1995)",
+      "Deadpool (2016)",
+      "Skyfall (2012)",
+      "Requiem for a Dream (2000)",
+      "The Butterfly Effect (2004)",
+      "Captain America: The First Avenger (2011)"
+    ],
+    "acerto_en_prueba": [
+      "Akira (1988)",
+      "Big Lebowski, The (1998)",
+      "Last Emperor, The (1987)",
+      "Dune (1984)",
+      "Chicken Run (2000)",
+      "Traffic (2000)",
+      "Scarface (1983)",
+      "Crimson Rivers, The (Rivières pourpres, Les) (2000)",
+      "Score, The (2001)",
+      "Training Day (2001)"
+    ]
+  }
+}

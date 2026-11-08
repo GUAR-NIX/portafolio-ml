@@ -1,0 +1,12 @@
+{
+  "viajes_2024": 44302799,
+  "viajes_sin_estacion_origen": 29835,
+  "estaciones_con_salidas": 2378,
+  "estaciones_modeladas": 250,
+  "salidas_estaciones_modeladas": 18176018,
+  "cuota_salidas_modeladas_pct": 41.0,
+  "salidas_anuales_estacion_250": 50301,
+  "salidas_anuales_estacion_1": 163490,
+  "mediana_salidas_anuales_todas": 8248.5,
+  "coinciden_si_se_elige_con_ene_nov": 247
+}

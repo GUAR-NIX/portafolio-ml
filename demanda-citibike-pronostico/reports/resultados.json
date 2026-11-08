@@ -1,0 +1,280 @@
+{
+  "proyecto": "ML_03_demanda_citibike",
+  "descripcion": "Pronóstico de demanda de bicicletas por estación y hora (Citi Bike + clima)",
+  "tiempo_ejecucion_segundos": 404.0,
+  "datos": {
+    "filas_demanda_horaria": 2196000,
+    "estaciones_modeladas": 250,
+    "horas_por_estacion": 8784,
+    "total_salidas": 18176018,
+    "periodo_demanda": "2024-01-01 00:00:00 → 2024-12-31 23:00:00",
+    "filas_modelado": 2112000,
+    "periodo_modelado": "2024-01-15 00:00:00 → 2024-12-31 23:00:00",
+    "test_final_desde": "2024-12-03 23:00:00",
+    "horas_estacion_test": 168250,
+    "horas_estacion_cv": 168000
+  },
+  "horizonte": {
+    "principal": "dia_siguiente: emitido a medianoche de D para las 24 h de D+1; solo rezagos >= 24 h",
+    "comparacion": "una_hora: usa la hora anterior (lag_1..lag_3); no disponible la noche anterior"
+  },
+  "test_final": {
+    "pred_dia": {
+      "MAE": 2.53,
+      "RMSE": 3.85,
+      "WAPE_pct": 50.58,
+      "Sesgo_pct": 7.36
+    },
+    "pred_dia_sin_clima": {
+      "MAE": 2.91,
+      "RMSE": 4.31,
+      "WAPE_pct": 58.21,
+      "Sesgo_pct": 22.61
+    },
+    "pred_1h": {
+      "MAE": 2.12,
+      "RMSE": 3.18,
+      "WAPE_pct": 42.34,
+      "Sesgo_pct": 3.69
+    },
+    "base_estacional": {
+      "MAE": 3.64,
+      "RMSE": 5.8,
+      "WAPE_pct": 72.86,
+      "Sesgo_pct": 7.37
+    },
+    "base_ayer": {
+      "MAE": 3.1,
+      "RMSE": 4.91,
+      "WAPE_pct": 62.03,
+      "Sesgo_pct": 1.67
+    },
+    "base_media": {
+      "MAE": 3.03,
+      "RMSE": 4.74,
+      "WAPE_pct": 60.6,
+      "Sesgo_pct": 0.25
+    }
+  },
+  "backtesting_cv": {
+    "pred_dia": {
+      "MAE": 2.97,
+      "RMSE": 4.47,
+      "WAPE_pct": 38.41,
+      "Sesgo_pct": 11.26
+    },
+    "pred_dia_sin_clima": {
+      "MAE": 3.5,
+      "RMSE": 5.28,
+      "WAPE_pct": 45.21,
+      "Sesgo_pct": 22.87
+    },
+    "pred_1h": {
+      "MAE": 2.58,
+      "RMSE": 3.87,
+      "WAPE_pct": 33.28,
+      "Sesgo_pct": 5.03
+    },
+    "base_estacional": {
+      "MAE": 4.21,
+      "RMSE": 6.7,
+      "WAPE_pct": 54.42,
+      "Sesgo_pct": 20.15
+    },
+    "base_ayer": {
+      "MAE": 4.08,
+      "RMSE": 6.45,
+      "WAPE_pct": 52.74,
+      "Sesgo_pct": 1.89
+    },
+    "base_media": {
+      "MAE": 4.29,
+      "RMSE": 6.64,
+      "WAPE_pct": 55.38,
+      "Sesgo_pct": 0.13
+    }
+  },
+  "backtesting_wape_por_fold": {
+    "1": {
+      "pred_dia": 31.16,
+      "pred_dia_sin_clima": 33.41,
+      "pred_1h": 28.78,
+      "base_estacional": 45.86
+    },
+    "2": {
+      "pred_dia": 31.17,
+      "pred_dia_sin_clima": 33.2,
+      "pred_1h": 29.37,
+      "base_estacional": 42.99
+    },
+    "3": {
+      "pred_dia": 43.71,
+      "pred_dia_sin_clima": 58.38,
+      "pred_1h": 37.16,
+      "base_estacional": 67.25
+    },
+    "4": {
+      "pred_dia": 60.38,
+      "pred_dia_sin_clima": 75.11,
+      "pred_1h": 44.95,
+      "base_estacional": 76.82
+    }
+  },
+  "mejoras_wape_pct": {
+    "dia_vs_base_estacional_test": 30.6,
+    "dia_vs_base_ayer_test": 18.5,
+    "dia_vs_base_estacional_cv": 29.4,
+    "una_hora_vs_dia_test": 16.3,
+    "con_clima_vs_sin_clima_test": 13.1,
+    "con_clima_vs_sin_clima_cv": 15.0
+  },
+  "ablacion_clima_lluvia": [
+    {
+      "condicion": "Con lluvia",
+      "horas_estacion": 28250,
+      "base_estacional": 88.55,
+      "pred_dia_sin_clima": 90.87,
+      "pred_dia": 61.88,
+      "pred_1h": 52.16
+    },
+    {
+      "condicion": "Sin lluvia",
+      "horas_estacion": 140000,
+      "base_estacional": 70.89,
+      "pred_dia_sin_clima": 54.11,
+      "pred_dia": 49.16,
+      "pred_1h": 41.11
+    },
+    {
+      "condicion": "Total",
+      "horas_estacion": 168250,
+      "base_estacional": 72.86,
+      "pred_dia_sin_clima": 58.21,
+      "pred_dia": 50.58,
+      "pred_1h": 42.34
+    }
+  ],
+  "predicciones_negativas_antes_de_recortar_pct": {
+    "pred_dia": 2.61,
+    "pred_dia_sin_clima": 0.63,
+    "pred_1h": 1.78
+  },
+  "intervalos": {
+    "modelo": "dia_siguiente",
+    "nominal_pct": 80,
+    "cobertura_real_pct": 75.1
+  },
+  "importancia_shap_por_familia_pct": {
+    "dia_siguiente": {
+      "Calendario": 20.0,
+      "Clima": 24.6,
+      "Estación": 6.9,
+      "Historia de demanda": 48.5
+    },
+    "una_hora": {
+      "Calendario": 21.2,
+      "Clima": 12.8,
+      "Estación": 4.3,
+      "Historia de demanda": 61.7
+    }
+  },
+  "negocio": {
+    "umbral_percentil": 90,
+    "horas_estacion_evaluadas": 168250,
+    "referencia": "linea_base_estacional",
+    "estrategias": {
+      "linea_base_estacional": {
+        "alertas": 3613,
+        "picos_reales": 3075,
+        "aciertos": 845,
+        "falsas_alarmas": 2768,
+        "picos_perdidos": 2230,
+        "precision_pct": 23.4,
+        "recall_pct": 27.5
+      },
+      "dia_siguiente_media": {
+        "alertas": 1601,
+        "picos_reales": 3075,
+        "aciertos": 884,
+        "falsas_alarmas": 717,
+        "picos_perdidos": 2191,
+        "precision_pct": 55.2,
+        "recall_pct": 28.7
+      },
+      "dia_siguiente_p90": {
+        "alertas": 5707,
+        "picos_reales": 3075,
+        "aciertos": 1788,
+        "falsas_alarmas": 3919,
+        "picos_perdidos": 1287,
+        "precision_pct": 31.3,
+        "recall_pct": 58.1
+      },
+      "una_hora_media": {
+        "alertas": 1548,
+        "picos_reales": 3075,
+        "aciertos": 1000,
+        "falsas_alarmas": 548,
+        "picos_perdidos": 2075,
+        "precision_pct": 64.6,
+        "recall_pct": 32.5
+      }
+    },
+    "frente_a_referencia": {
+      "dia_siguiente_media": {
+        "falsas_alarmas_evitadas": 2051,
+        "picos_perdidos_evitados": 39,
+        "domina_a_la_referencia": true
+      },
+      "dia_siguiente_p90": {
+        "falsas_alarmas_evitadas": -1151,
+        "picos_perdidos_evitados": 943,
+        "domina_a_la_referencia": false
+      },
+      "una_hora_media": {
+        "falsas_alarmas_evitadas": 2220,
+        "picos_perdidos_evitados": 155,
+        "domina_a_la_referencia": true
+      }
+    },
+    "costo_por_razon": {
+      "1": {
+        "linea_base_estacional": 4998,
+        "dia_siguiente_media": 2908,
+        "dia_siguiente_p90": 5206,
+        "una_hora_media": 2623
+      },
+      "2": {
+        "linea_base_estacional": 7228,
+        "dia_siguiente_media": 5099,
+        "dia_siguiente_p90": 6493,
+        "una_hora_media": 4698
+      },
+      "5": {
+        "linea_base_estacional": 13918,
+        "dia_siguiente_media": 11672,
+        "dia_siguiente_p90": 10354,
+        "una_hora_media": 10923
+      },
+      "10": {
+        "linea_base_estacional": 25068,
+        "dia_siguiente_media": 22627,
+        "dia_siguiente_p90": 16789,
+        "una_hora_media": 21298
+      }
+    },
+    "estrategia_mas_barata_por_razon": {
+      "1": "una_hora_media",
+      "2": "una_hora_media",
+      "5": "dia_siguiente_p90",
+      "10": "dia_siguiente_p90"
+    },
+    "razon_equilibrio_p90_vs_media": 3.54,
+    "razon_equilibrio_media_vs_base": null,
+    "razon_equilibrio_p90_vs_base": 1.22
+  },
+  "artefactos": {
+    "figuras_png": 9,
+    "reportes_csv": 5
+  }
+}

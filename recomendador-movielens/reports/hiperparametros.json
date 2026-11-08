@@ -1,0 +1,34 @@
+{
+  "als": {
+    "factores": 128,
+    "regularizacion": 1.0,
+    "alpha": 2.0,
+    "bm25": true
+  },
+  "contenido": {
+    "peso_generos": 0.2,
+    "peso_popularidad": 0.3
+  },
+  "hibrido": {
+    "k": 30.0,
+    "peso_reciente": 2.0
+  },
+  "ease_lambda": 1000.0,
+  "particion": {
+    "corte": "2017-07-01",
+    "fin": "2018-01-01",
+    "calificaciones_entrenamiento": 21716191,
+    "positivos_entrenamiento": 10808900,
+    "usuarios_entrenamiento": 146859,
+    "items_catalogo": 16314,
+    "calificaciones_ventana": 772509,
+    "positivos_ventana": 375891,
+    "usuarios_existentes_evaluables": 3907,
+    "usuarios_nuevos_evaluables": 3557,
+    "positivos_ventana_fuera_de_catalogo_pct": 3.1
+  },
+  "usuarios_validacion": {
+    "existentes": 3907,
+    "nuevos": 3000
+  }
+}

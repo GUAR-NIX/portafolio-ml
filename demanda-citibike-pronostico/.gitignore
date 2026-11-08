@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.pytest_tmp*/
+.ipynb_checkpoints/
+
+# Editores y sistema
+.vscode/
+Thumbs.db
+desktop.ini
+
+# Datos crudos: 12 meses de viajes (~17 GB) se regeneran con descargar_datos.py.
+# Se versionan solo el clima (0,3 MB, Open-Meteo CC BY 4.0) y la carpeta vacía.
+/data/raw/*
+!/data/raw/.gitkeep
+!/data/raw/clima_nyc_horario.csv
+
+# Datos procesados: se versiona lo que la API y la app leen para funcionar en un clon
+# (demanda horaria 7,8 MB + catálogo de estaciones); el resto se regenera con el pipeline.
+/data/procesados/*
+!/data/procesados/demanda_horaria.parquet
+!/data/procesados/estaciones.csv
+!/data/procesados/resumen_ingesta.json
+
+# Logs y secretos
+/reports/*.log
+.env

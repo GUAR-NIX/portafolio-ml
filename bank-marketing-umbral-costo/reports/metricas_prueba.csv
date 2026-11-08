@@ -1,0 +1,6 @@
+modelo,auc,average_precision,brier,log_loss,prob_media,tasa_real,brier_skill
+Regla por segmento,0.6752,0.2458,0.0898,0.3178,0.1126,0.1127,0.1015
+"Regresión logística (pesos, calibrada)",0.8008,0.4436,0.0785,0.2752,0.1116,0.1127,0.215
+"LightGBM (ninguna, sin calibrar)",0.8146,0.4896,0.0751,0.265,0.1119,0.1127,0.249
+"LightGBM (ninguna, calibrado) · FINAL",0.8146,0.4896,0.0751,0.2649,0.112,0.1127,0.2492
+"LightGBM (pesos, sin calibrar)",0.8138,0.4831,0.152,0.4914,0.3777,0.1127,-0.5202

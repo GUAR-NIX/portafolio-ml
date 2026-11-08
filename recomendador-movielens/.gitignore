@@ -1,0 +1,24 @@
+# Datos: se bajan con  python descargar_datos.py  (1,2 GB) y se convierten a Parquet en data/processed/
+/data/raw/
+/data/processed/
+
+# models/ (paquete liviano) y reports/ SÍ se versionan, salvo tres archivos que llevan datos de MovieLens:
+# la licencia de GroupLens no permite redistribuir el dataset. Se generan con  python generar_demo.py
+/models/peliculas.parquet
+/models/demo_positivos.npz
+/models/demo_vistos.npz
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.pytest_tmp*/
+.ipynb_checkpoints/
+
+# Editores y sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

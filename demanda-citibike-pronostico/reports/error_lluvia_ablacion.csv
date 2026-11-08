@@ -1,0 +1,4 @@
+condicion,horas_estacion,base_estacional,pred_dia_sin_clima,pred_dia,pred_1h
+Con lluvia,28250,88.55,90.87,61.88,52.16
+Sin lluvia,140000,70.89,54.11,49.16,41.11
+Total,168250,72.86,58.21,50.58,42.34

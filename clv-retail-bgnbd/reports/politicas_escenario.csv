@@ -1,0 +1,5 @@
+politica,efectividad_rescate,efecto_fuera_zona,clientes_contactados,costo_campana_gbp,margen_recuperado_gbp,ganancia_neta_gbp,roi_pct
+1. Contactar a todos con > 60 días sin comprar,0.25,0.04,3362,20172.0,8456.755542854313,-11715.244457145687,-58.07676213139841
+2. Regla RFM (frecuencia >= 2 e inactividad 60–240 d),0.25,0.04,1016,6096.0,5281.300909215237,-814.699090784763,-13.364486397387845
+3. Top 20 % gasto histórico con > 60 d inactividad,0.25,0.04,334,2004.0,4587.971921294498,2583.9719212944983,128.94071463545401
+4. BG/NBD + Gamma-Gamma (zona de riesgo y beneficio esperado > costo),0.25,0.04,190,1140.0,6045.366345152992,4905.366345152992,430.29529343447297

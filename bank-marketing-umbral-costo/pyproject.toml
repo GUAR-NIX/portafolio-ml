@@ -1,0 +1,17 @@
+[project]
+name = "campana"
+version = "1.0.0"
+description = "A quién llamar en una campaña de depósitos a plazo: clasificación desbalanceada, calibración y umbral por costo (UCI Bank Marketing)"
+authors = [{ name = "Erick Guarnizo" }]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::Warning"]

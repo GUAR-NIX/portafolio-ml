@@ -1,0 +1,32 @@
+# Versiones fijadas: las usadas para generar reports/ (Python 3.14, Windows 11).
+
+# Modelo y datos
+lightgbm==4.7.0
+shap==0.54.1
+scikit-learn==1.9.1
+pandas==3.1.0
+numpy==2.5.4
+pyarrow==26.0.0
+duckdb==2.0.0
+scipy==1.18.1
+joblib==1.6.0
+matplotlib==3.11.2
+holidays==0.107
+requests==2.34.2
+
+# Servicio API
+fastapi==0.162.0
+uvicorn==0.54.0
+pydantic==2.14.1
+httpx==0.28.1
+
+# App
+streamlit==1.66.1
+plotly==7.1.0
+
+# Notebooks y pruebas
+jupyter==1.1.1
+nbconvert==7.17.2
+nbformat==5.11.1
+ipykernel==7.4.0
+pytest==9.1.1

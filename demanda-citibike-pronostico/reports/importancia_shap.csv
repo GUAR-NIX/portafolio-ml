@@ -1,0 +1,35 @@
+modelo,variable,nombre,familia,media_abs_shap,pct
+dia_siguiente,temperatura_c,Temperatura (°C),Clima,1.5836,17.36
+dia_siguiente,lag_168,Rezago 168 h (semana),Historia de demanda,1.4488,15.88
+dia_siguiente,lag_24,Rezago 24 h (ayer),Historia de demanda,1.4386,15.77
+dia_siguiente,hora,Hora del día,Calendario,1.2415,13.61
+dia_siguiente,lag_336,Rezago 336 h (2 semanas),Historia de demanda,1.1951,13.1
+dia_siguiente,estacion_cat,Estación,Estación,0.6329,6.94
+dia_siguiente,precipitacion_mm,Precipitación (mm),Clima,0.5447,5.97
+dia_siguiente,dia_semana,Día de semana,Calendario,0.283,3.1
+dia_siguiente,lag_48,Rezago 48 h (anteayer),Historia de demanda,0.1475,1.62
+dia_siguiente,es_fin_de_semana,Fin de semana,Calendario,0.1363,1.49
+dia_siguiente,mes,Mes,Calendario,0.1218,1.34
+dia_siguiente,media_24_d1,Media 24 h hasta ayer,Historia de demanda,0.1114,1.22
+dia_siguiente,viento_kmh,Viento (km/h),Clima,0.0816,0.89
+dia_siguiente,media_168_d1,Media 168 h hasta ayer,Historia de demanda,0.0798,0.87
+dia_siguiente,es_feriado,Feriado,Calendario,0.0465,0.51
+dia_siguiente,lluvia_mm,Lluvia (mm),Clima,0.0304,0.33
+una_hora,lag_1,Rezago 1 h,Historia de demanda,2.6104,29.9
+una_hora,hora,Hora del día,Calendario,1.3933,15.96
+una_hora,lag_168,Rezago 168 h (semana),Historia de demanda,1.0974,12.57
+una_hora,temperatura_c,Temperatura (°C),Clima,0.7589,8.69
+una_hora,lag_24,Rezago 24 h (ayer),Historia de demanda,0.7417,8.49
+una_hora,estacion_cat,Estación,Estación,0.3785,4.33
+una_hora,lag_2,Rezago 2 h,Historia de demanda,0.3316,3.8
+una_hora,media_24,Media móvil 24 h,Historia de demanda,0.2989,3.42
+una_hora,precipitacion_mm,Precipitación (mm),Clima,0.291,3.33
+una_hora,media_3,Media móvil 3 h,Historia de demanda,0.227,2.6
+una_hora,dia_semana,Día de semana,Calendario,0.1896,2.17
+una_hora,mes,Mes,Calendario,0.1313,1.5
+una_hora,es_fin_de_semana,Fin de semana,Calendario,0.1102,1.26
+una_hora,lag_3,Rezago 3 h,Historia de demanda,0.0464,0.53
+una_hora,viento_kmh,Viento (km/h),Clima,0.0419,0.48
+una_hora,media_168,Media móvil 168 h,Historia de demanda,0.0323,0.37
+una_hora,es_feriado,Feriado,Calendario,0.029,0.33
+una_hora,lluvia_mm,Lluvia (mm),Clima,0.0214,0.25

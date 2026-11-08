@@ -1,0 +1,5 @@
+umbral_confianza,cobertura_automatica_pct,derivadas_fotointeprete_pct,exactitud_en_automaticas_pct,errores_misma_macro_restantes,errores_criticos_restantes,costo_total_por_1000_usd,politica,modelo,costo_ic95_inf,costo_ic95_sup
+0.0,100.0,0.0,90.3,150,374,10668.52,m1_sin_abstencion,m1,9696.13,11621.3
+0.85,78.96,21.04,97.23,39,79,6087.59,m1_con_abstencion,m1,5609.26,6556.49
+0.0,100.0,0.0,96.98,45,118,3350.93,m5_sin_abstencion,m5,2812.8,3914.81
+0.85,92.22,7.78,99.14,9,34,2339.81,m5_con_abstencion,m5,2007.14,2675.62

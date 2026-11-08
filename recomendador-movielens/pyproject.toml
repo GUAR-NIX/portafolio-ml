@@ -1,0 +1,18 @@
+[project]
+name = "recomendador"
+version = "1.0.0"
+description = "Sistema de recomendación de películas sobre MovieLens 25M: partición temporal, ALS implícito, contenido (Tag Genome), híbrido, métricas top-K por segmento, API y app"
+authors = [{ name = "Erick Guarnizo" }]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::Warning"]

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "demanda-citibike"
+version = "1.0.0"
+description = "Pronóstico de demanda de bicicletas por estación y hora (Citi Bike + clima): modelo global LightGBM con backtesting temporal, intervalos por cuantiles y decisión de rebalanceo"
+authors = [{ name = "Erick Guarnizo" }]
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+filterwarnings = ["ignore::Warning"]

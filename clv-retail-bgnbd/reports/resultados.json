@@ -1,0 +1,538 @@
+{
+  "metadata": {
+    "nombre_modelo": "clv_bgnbd_gamma_gamma",
+    "version": "1.1.0",
+    "fuente_datos": "UCI Online Retail II (01/12/2009 - 09/12/2011)",
+    "ventana_calibracion": "2009-12-01 a 2011-06-09 (555 días)",
+    "ventana_holdout": "2011-06-10 a 2011-12-09 (183 días = 6 meses)",
+    "clientes_calibracion": 4944,
+    "clientes_repetidores": 3336,
+    "tasa_recompra_holdout": 0.5202,
+    "parametros_bgnbd": {
+      "r": 0.683,
+      "alpha_semanas": 9.4806,
+      "a": 0.1518,
+      "b": 3.3057,
+      "log_verosimilitud": -58257.11,
+      "tasa_media_compra_semanal": 0.072,
+      "prob_media_abandono_post_compra": 0.0439
+    },
+    "parametros_gamma_gamma": {
+      "p": 2.2995,
+      "q": 3.8383,
+      "gamma": 484.87,
+      "ticket_medio_poblacional_gbp": 392.81,
+      "log_verosimilitud": -22486.4
+    },
+    "supuestos_negocio": {
+      "horizonte_meses": 6,
+      "margen_bruto": 0.3,
+      "tasa_descuento_mensual": 0.01,
+      "costo_contacto_retencion_gbp": 6.0,
+      "efectividad_rescate_supuesta": 0.25,
+      "zona_riesgo": "0,20 <= P(vivo) < 0,70 y frecuencia >= 2",
+      "tope_ticket_mayorista_gbp": 3000.0
+    },
+    "metricas_holdout": [
+      {
+        "modelo": "Ritmo histórico (heurística)",
+        "auc_recompra": 0.7623112045927212,
+        "brier_recompra": 0.2178122669370197,
+        "mae_compras": 1.063592661075498,
+        "rmse_compras": 1.8612960189886827,
+        "sesgo_compras_pct": -3.2075121026434914,
+        "spearman_compras": 0.5912871500447509,
+        "mae_ingreso_gbp": 481.9080223294548,
+        "rmse_ingreso_gbp": 1275.4544809499505,
+        "error_cartera_pct": -12.397269872195373,
+        "spearman_ingreso": 0.608182207736276,
+        "captura_top10_pct": 55.22796789765264,
+        "captura_top20_pct": 70.68791536704224
+      },
+      {
+        "modelo": "Tabla RFM por tramos",
+        "auc_recompra": 0.7742677826325272,
+        "brier_recompra": 0.20056951559518602,
+        "mae_compras": 1.1911874971592205,
+        "rmse_compras": 2.742085773545195,
+        "sesgo_compras_pct": -21.825870079798857,
+        "spearman_compras": 0.5655040313358353,
+        "mae_ingreso_gbp": 665.0296299332779,
+        "rmse_ingreso_gbp": 2336.213017351234,
+        "error_cartera_pct": -23.802831099001963,
+        "spearman_ingreso": 0.5464615726962919,
+        "captura_top10_pct": 50.9716333904081,
+        "captura_top20_pct": 64.60824961637408
+      },
+      {
+        "modelo": "LightGBM supervisado",
+        "auc_recompra": 0.799598953183722,
+        "brier_recompra": 0.18972517379101755,
+        "mae_compras": 1.0967683853734118,
+        "rmse_compras": 2.07357799533885,
+        "sesgo_compras_pct": -26.930336147483736,
+        "spearman_compras": 0.606559224096623,
+        "mae_ingreso_gbp": 526.7146288944834,
+        "rmse_ingreso_gbp": 1728.07383859805,
+        "error_cartera_pct": -40.92310547558052,
+        "spearman_ingreso": 0.6025096908276304,
+        "captura_top10_pct": 56.51341076365773,
+        "captura_top20_pct": 71.60397727684304
+      },
+      {
+        "modelo": "BG/NBD + Gamma-Gamma",
+        "auc_recompra": 0.8100558878989979,
+        "brier_recompra": 0.17736043664016765,
+        "mae_compras": 1.0450048601369688,
+        "rmse_compras": 1.7836336503381538,
+        "sesgo_compras_pct": -1.3945894506564769,
+        "spearman_compras": 0.6244794984659778,
+        "mae_ingreso_gbp": 485.8186443359799,
+        "rmse_ingreso_gbp": 1278.6055963269569,
+        "error_cartera_pct": -10.04186757680437,
+        "spearman_ingreso": 0.6355222671496945,
+        "captura_top10_pct": 57.070468774196904,
+        "captura_top20_pct": 72.02426644395695
+      }
+    ]
+  },
+  "auditoria_limpieza": [
+    {
+      "etapa": "0. Filas crudas totales",
+      "filas": 1067371,
+      "importe_gbp": 19287250.568,
+      "pct_filas": 100.0
+    },
+    {
+      "etapa": "1. Excluidas: sin Customer ID (invitado)",
+      "filas": 243007,
+      "importe_gbp": 2638958.1799999997,
+      "pct_filas": 22.766872999172733
+    },
+    {
+      "etapa": "2. Excluidas: facturas de cancelación (C*)",
+      "filas": 18744,
+      "importe_gbp": -1095136.79,
+      "pct_filas": 1.7560904315369257
+    },
+    {
+      "etapa": "3. Excluidas: códigos contables/envío (POST, M, D...)",
+      "filas": 2925,
+      "importe_gbp": 308964.448,
+      "pct_filas": 0.2740377994155734
+    },
+    {
+      "etapa": "4. Excluidas: cantidad <= 0 o precio <= 0",
+      "filas": 61,
+      "importe_gbp": 0.0,
+      "pct_filas": 0.0057149763296923
+    },
+    {
+      "etapa": "5. Excluidas: líneas duplicadas exactas",
+      "filas": 26055,
+      "importe_gbp": 365882.01,
+      "pct_filas": 2.4410443978710306
+    },
+    {
+      "etapa": "6. Líneas limpias retenidas",
+      "filas": 776579,
+      "importe_gbp": 17068582.72,
+      "pct_filas": 72.75623939567404
+    }
+  ],
+  "supuesto_gamma_gamma": [
+    {
+      "variante": "Crudo (incluye mayoristas > 3.000 GBP)",
+      "n_clientes_repetidores": 3336,
+      "ticket_medio_gbp": 411.35089681903725,
+      "ticket_mediana_gbp": 300.7427083333333,
+      "ticket_max_gbp": 38662.955,
+      "pearson_r": 0.08113339889155269,
+      "pearson_pval": 2.7042447546921612e-06,
+      "spearman_rho": 0.24959427766143252,
+      "spearman_pval": 1.492389060064429e-48
+    },
+    {
+      "variante": "Con tope p99,5 (ticket acotado a 3.000 GBP)",
+      "n_clientes_repetidores": 3336,
+      "ticket_medio_gbp": 378.5532790842441,
+      "ticket_mediana_gbp": 300.7427083333333,
+      "ticket_max_gbp": 3000.0,
+      "pearson_r": 0.15850945903306962,
+      "pearson_pval": 3.2594517373262694e-20,
+      "spearman_rho": 0.24885216201591473,
+      "spearman_pval": 2.8886700964020507e-48
+    },
+    {
+      "variante": "Solo minoristas (excluye mayoristas > 3.000 GBP)",
+      "n_clientes_repetidores": 3315,
+      "ticket_medio_gbp": 369.77856841648276,
+      "ticket_mediana_gbp": 299.61800000000005,
+      "ticket_max_gbp": 2615.265340909091,
+      "pearson_r": 0.1790396948339334,
+      "pearson_pval": 2.7955831310368196e-25,
+      "spearman_rho": 0.24919526488386595,
+      "spearman_pval": 4.1871744518136945e-48
+    }
+  ],
+  "comparacion_modelos": [
+    {
+      "modelo": "Ritmo histórico (heurística)",
+      "auc_recompra": 0.7623112045927212,
+      "brier_recompra": 0.2178122669370197,
+      "mae_compras": 1.063592661075498,
+      "rmse_compras": 1.8612960189886827,
+      "sesgo_compras_pct": -3.2075121026434914,
+      "spearman_compras": 0.5912871500447509,
+      "mae_ingreso_gbp": 481.9080223294548,
+      "rmse_ingreso_gbp": 1275.4544809499505,
+      "error_cartera_pct": -12.397269872195373,
+      "spearman_ingreso": 0.608182207736276,
+      "captura_top10_pct": 55.22796789765264,
+      "captura_top20_pct": 70.68791536704224
+    },
+    {
+      "modelo": "Tabla RFM por tramos",
+      "auc_recompra": 0.7742677826325272,
+      "brier_recompra": 0.20056951559518602,
+      "mae_compras": 1.1911874971592205,
+      "rmse_compras": 2.742085773545195,
+      "sesgo_compras_pct": -21.825870079798857,
+      "spearman_compras": 0.5655040313358353,
+      "mae_ingreso_gbp": 665.0296299332779,
+      "rmse_ingreso_gbp": 2336.213017351234,
+      "error_cartera_pct": -23.802831099001963,
+      "spearman_ingreso": 0.5464615726962919,
+      "captura_top10_pct": 50.9716333904081,
+      "captura_top20_pct": 64.60824961637408
+    },
+    {
+      "modelo": "LightGBM supervisado",
+      "auc_recompra": 0.799598953183722,
+      "brier_recompra": 0.18972517379101755,
+      "mae_compras": 1.0967683853734118,
+      "rmse_compras": 2.07357799533885,
+      "sesgo_compras_pct": -26.930336147483736,
+      "spearman_compras": 0.606559224096623,
+      "mae_ingreso_gbp": 526.7146288944834,
+      "rmse_ingreso_gbp": 1728.07383859805,
+      "error_cartera_pct": -40.92310547558052,
+      "spearman_ingreso": 0.6025096908276304,
+      "captura_top10_pct": 56.51341076365773,
+      "captura_top20_pct": 71.60397727684304
+    },
+    {
+      "modelo": "BG/NBD + Gamma-Gamma",
+      "auc_recompra": 0.8100558878989979,
+      "brier_recompra": 0.17736043664016765,
+      "mae_compras": 1.0450048601369688,
+      "rmse_compras": 1.7836336503381538,
+      "sesgo_compras_pct": -1.3945894506564769,
+      "spearman_compras": 0.6244794984659778,
+      "mae_ingreso_gbp": 485.8186443359799,
+      "rmse_ingreso_gbp": 1278.6055963269569,
+      "error_cartera_pct": -10.04186757680437,
+      "spearman_ingreso": 0.6355222671496945,
+      "captura_top10_pct": 57.070468774196904,
+      "captura_top20_pct": 72.02426644395695
+    }
+  ],
+  "segmentos": [
+    {
+      "segmento": "Campeones activos",
+      "n_clientes": 1598,
+      "frecuencia_media": 9.117647058823529,
+      "inactividad_media_dias": 52.51063829787234,
+      "prob_vivo_media": 0.9502724532825723,
+      "prob_recompra_media": 0.8244396497716505,
+      "tasa_recompra_real": 0.8485607008760951,
+      "clv_neto_medio_gbp": 454.3880527396476,
+      "ingreso_esperado_total_gbp": 2505257.142768762,
+      "ingreso_real_holdout_gbp": 2955954.56,
+      "pct_clientes": 32.32200647249191,
+      "pct_ingreso_real": 80.40606251554848,
+      "ratio_ingreso_real_vs_esperado": 1.1799006615077987,
+      "accion_recomendada": "Fidelización VIP y acceso anticipado (sin descuento agresivo)"
+    },
+    {
+      "segmento": "En riesgo de alto valor",
+      "n_clientes": 197,
+      "frecuencia_media": 4.695431472081219,
+      "inactividad_media_dias": 270.03553299492387,
+      "prob_vivo_media": 0.5183717405814796,
+      "prob_recompra_media": 0.38215917204392624,
+      "tasa_recompra_real": 0.40609137055837563,
+      "clv_neto_medio_gbp": 113.63153888873752,
+      "ingreso_esperado_total_gbp": 77236.3290263573,
+      "ingreso_real_holdout_gbp": 92640.73,
+      "pct_clientes": 3.98462783171521,
+      "pct_ingreso_real": 2.5199563040191144,
+      "ratio_ingreso_real_vs_esperado": 1.1994450172325755,
+      "accion_recomendada": "Campaña prioritaria de reactivación personalizada (rescate)"
+    },
+    {
+      "segmento": "Nuevos / prometedores",
+      "n_clientes": 2299,
+      "frecuencia_media": 0.31361461505002175,
+      "inactividad_media_dias": 240.78816876903002,
+      "prob_vivo_media": 0.958358722955179,
+      "prob_recompra_media": 0.3291990163226679,
+      "tasa_recompra_real": 0.30491518051326666,
+      "clv_neto_medio_gbp": 58.38533026286976,
+      "ingreso_esperado_total_gbp": 463101.61336783896,
+      "ingreso_real_holdout_gbp": 397154.55,
+      "pct_clientes": 46.500809061488674,
+      "pct_ingreso_real": 10.8031544218442,
+      "ratio_ingreso_real_vs_esperado": 0.8575969906728491,
+      "accion_recomendada": "Secuencia de segunda compra (cross-sell a 30 días)"
+    },
+    {
+      "segmento": "Regulares / ocasionales",
+      "n_clientes": 811,
+      "frecuencia_media": 2.2120838471023427,
+      "inactividad_media_dias": 168.76818742293466,
+      "prob_vivo_media": 0.8538734852071496,
+      "prob_recompra_media": 0.5251860877835411,
+      "tasa_recompra_real": 0.5265104808877928,
+      "clv_neto_medio_gbp": 92.1723270082784,
+      "ingreso_esperado_total_gbp": 257917.8196304183,
+      "ingreso_real_holdout_gbp": 216035.24,
+      "pct_clientes": 16.403721682847898,
+      "pct_ingreso_real": 5.87645806470094,
+      "ratio_ingreso_real_vs_esperado": 0.8376126950420344,
+      "accion_recomendada": "Newsletter automatizada de bajo costo"
+    },
+    {
+      "segmento": "Inactivos / perdidos",
+      "n_clientes": 39,
+      "frecuencia_media": 9.64102564102564,
+      "inactividad_media_dias": 327.05128205128204,
+      "prob_vivo_media": 0.0746769096510104,
+      "prob_recompra_media": 0.06224372485297012,
+      "tasa_recompra_real": 0.20512820512820512,
+      "clv_neto_medio_gbp": 26.774010619284244,
+      "ingreso_esperado_total_gbp": 3602.79551850416,
+      "ingreso_real_holdout_gbp": 14498.11,
+      "pct_clientes": 0.7888349514563107,
+      "pct_ingreso_real": 0.3943686938872628,
+      "ratio_ingreso_real_vs_esperado": 4.024127909990144,
+      "accion_recomendada": "No invertir presupuesto directo (solo retargeting pasivo)"
+    }
+  ],
+  "politicas_retencion_holdout": [
+    {
+      "politica": "1. Contactar a todos con > 60 días sin comprar",
+      "clientes_contactados": 3362,
+      "pct_cartera": 68.00161812297735,
+      "costo_campana_gbp": 20172.0,
+      "tasa_recompra_real_pct": 39.05413444378346,
+      "margen_real_holdout_gbp": 293088.537,
+      "margen_real_por_contacto_gbp": 87.17684027364665,
+      "uplift_equilibrio_pct": 6.882561906540889,
+      "clientes_sin_recompra": 2049,
+      "margen_historico_perdido_gbp": 234080.02975008465,
+      "tasa_rescate_equilibrio_pct": 8.61756554864446,
+      "tasa_rescate_equilibrio_ic95_inf": 7.8782605223317015,
+      "tasa_rescate_equilibrio_ic95_sup": 9.375368763809997
+    },
+    {
+      "politica": "2. Regla RFM (frecuencia >= 2 e inactividad 60–240 d)",
+      "clientes_contactados": 1016,
+      "pct_cartera": 20.550161812297734,
+      "costo_campana_gbp": 6096.0,
+      "tasa_recompra_real_pct": 64.66535433070865,
+      "margen_real_holdout_gbp": 186264.057,
+      "margen_real_por_contacto_gbp": 183.33076476377954,
+      "uplift_equilibrio_pct": 3.2727731255204,
+      "clientes_sin_recompra": 359,
+      "margen_historico_perdido_gbp": 90061.10861987727,
+      "tasa_rescate_equilibrio_pct": 6.76873746439155,
+      "tasa_rescate_equilibrio_ic95_inf": 5.480911383179374,
+      "tasa_rescate_equilibrio_ic95_sup": 8.335870945257811
+    },
+    {
+      "politica": "3. Top 20 % gasto histórico con > 60 d inactividad",
+      "clientes_contactados": 334,
+      "pct_cartera": 6.755663430420713,
+      "costo_campana_gbp": 2004.0,
+      "tasa_recompra_real_pct": 69.76047904191617,
+      "margen_real_holdout_gbp": 117496.434,
+      "margen_real_por_contacto_gbp": 351.7857305389221,
+      "uplift_equilibrio_pct": 1.7055836775437798,
+      "clientes_sin_recompra": 101,
+      "margen_historico_perdido_gbp": 67585.29907375708,
+      "tasa_rescate_equilibrio_pct": 2.9651418688152846,
+      "tasa_rescate_equilibrio_ic95_inf": 2.3320143593300884,
+      "tasa_rescate_equilibrio_ic95_sup": 3.9452713489526414
+    },
+    {
+      "politica": "4. BG/NBD + Gamma-Gamma (zona de riesgo y beneficio esperado > costo)",
+      "clientes_contactados": 190,
+      "pct_cartera": 3.843042071197411,
+      "costo_campana_gbp": 1140.0,
+      "tasa_recompra_real_pct": 40.0,
+      "margen_real_holdout_gbp": 27485.502,
+      "margen_real_por_contacto_gbp": 144.66053684210527,
+      "uplift_equilibrio_pct": 4.147641181885636,
+      "clientes_sin_recompra": 114,
+      "margen_historico_perdido_gbp": 31820.28444054011,
+      "tasa_rescate_equilibrio_pct": 3.5826203946423614,
+      "tasa_rescate_equilibrio_ic95_inf": 2.5211277872156796,
+      "tasa_rescate_equilibrio_ic95_sup": 5.029482891119247
+    }
+  ],
+  "politicas_escenario": [
+    {
+      "politica": "1. Contactar a todos con > 60 días sin comprar",
+      "efectividad_rescate": 0.25,
+      "efecto_fuera_zona": 0.04,
+      "clientes_contactados": 3362,
+      "costo_campana_gbp": 20172.0,
+      "margen_recuperado_gbp": 8456.755542854313,
+      "ganancia_neta_gbp": -11715.244457145687,
+      "roi_pct": -58.07676213139841
+    },
+    {
+      "politica": "2. Regla RFM (frecuencia >= 2 e inactividad 60–240 d)",
+      "efectividad_rescate": 0.25,
+      "efecto_fuera_zona": 0.04,
+      "clientes_contactados": 1016,
+      "costo_campana_gbp": 6096.0,
+      "margen_recuperado_gbp": 5281.300909215237,
+      "ganancia_neta_gbp": -814.699090784763,
+      "roi_pct": -13.364486397387845
+    },
+    {
+      "politica": "3. Top 20 % gasto histórico con > 60 d inactividad",
+      "efectividad_rescate": 0.25,
+      "efecto_fuera_zona": 0.04,
+      "clientes_contactados": 334,
+      "costo_campana_gbp": 2004.0,
+      "margen_recuperado_gbp": 4587.971921294498,
+      "ganancia_neta_gbp": 2583.9719212944983,
+      "roi_pct": 128.94071463545401
+    },
+    {
+      "politica": "4. BG/NBD + Gamma-Gamma (zona de riesgo y beneficio esperado > costo)",
+      "efectividad_rescate": 0.25,
+      "efecto_fuera_zona": 0.04,
+      "clientes_contactados": 190,
+      "costo_campana_gbp": 1140.0,
+      "margen_recuperado_gbp": 6045.366345152992,
+      "ganancia_neta_gbp": 4905.366345152992,
+      "roi_pct": 430.29529343447297
+    }
+  ],
+  "bootstrap_bgnbd_vs_lightgbm": [
+    {
+      "metrica": "auc_recompra",
+      "modelo_a": "BG/NBD + Gamma-Gamma",
+      "modelo_b": "LightGBM supervisado",
+      "valor_a": 0.8100558878989979,
+      "valor_b": 0.799598953183722,
+      "diferencia_a_menos_b": 0.010456934715275867,
+      "ic95_inf": 0.0037225715656385577,
+      "ic95_sup": 0.017421467612959426,
+      "significativa_95": true,
+      "n_bootstrap": 1000
+    },
+    {
+      "metrica": "brier_recompra",
+      "modelo_a": "BG/NBD + Gamma-Gamma",
+      "modelo_b": "LightGBM supervisado",
+      "valor_a": 0.17736043664016765,
+      "valor_b": 0.18972517379101755,
+      "diferencia_a_menos_b": -0.012364737150849903,
+      "ic95_inf": -0.015776919169402905,
+      "ic95_sup": -0.008637947328512037,
+      "significativa_95": true,
+      "n_bootstrap": 1000
+    },
+    {
+      "metrica": "spearman_compras",
+      "modelo_a": "BG/NBD + Gamma-Gamma",
+      "modelo_b": "LightGBM supervisado",
+      "valor_a": 0.6244794984659778,
+      "valor_b": 0.606559224096623,
+      "diferencia_a_menos_b": 0.01792027436935484,
+      "ic95_inf": 0.007522047948786042,
+      "ic95_sup": 0.029234649950384727,
+      "significativa_95": true,
+      "n_bootstrap": 1000
+    },
+    {
+      "metrica": "spearman_ingreso",
+      "modelo_a": "BG/NBD + Gamma-Gamma",
+      "modelo_b": "LightGBM supervisado",
+      "valor_a": 0.6355222671496945,
+      "valor_b": 0.6025096908276304,
+      "diferencia_a_menos_b": 0.03301257632206411,
+      "ic95_inf": 0.021295430957989962,
+      "ic95_sup": 0.045819868611764195,
+      "significativa_95": true,
+      "n_bootstrap": 1000
+    },
+    {
+      "metrica": "captura_top20_pct",
+      "modelo_a": "BG/NBD + Gamma-Gamma",
+      "modelo_b": "LightGBM supervisado",
+      "valor_a": 72.02426644395695,
+      "valor_b": 71.60397727684304,
+      "diferencia_a_menos_b": 0.42028916711390707,
+      "ic95_inf": -0.5916634562143784,
+      "ic95_sup": 1.1565278154807384,
+      "significativa_95": false,
+      "n_bootstrap": 1000
+    }
+  ],
+  "lightgbm_ventanas": [
+    {
+      "modelo": "LightGBM · ventana previa (corte 2010-12-09, objetivo dic–jun)",
+      "clientes_entrenamiento": 4285,
+      "auc_recompra": 0.799598953183722,
+      "brier_recompra": 0.18972517379101755,
+      "mae_compras": 1.0967683853734118,
+      "rmse_compras": 2.07357799533885,
+      "sesgo_compras_pct": -26.930336147483736,
+      "spearman_compras": 0.606559224096623,
+      "mae_ingreso_gbp": 526.7146288944834,
+      "rmse_ingreso_gbp": 1728.07383859805,
+      "error_cartera_pct": -40.92310547558052,
+      "spearman_ingreso": 0.6025096908276304,
+      "captura_top10_pct": 56.51341076365773,
+      "captura_top20_pct": 71.60397727684304
+    },
+    {
+      "modelo": "LightGBM · misma estación (corte 2010-06-09, objetivo jun–dic)",
+      "clientes_entrenamiento": 2775,
+      "auc_recompra": 0.7739819177338518,
+      "brier_recompra": 0.2580340915826514,
+      "mae_compras": 2.105930915385987,
+      "rmse_compras": 3.2695974699453405,
+      "sesgo_compras_pct": 109.80945757024713,
+      "spearman_compras": 0.5761533347650438,
+      "mae_ingreso_gbp": 957.6180922505764,
+      "rmse_ingreso_gbp": 2062.4942581443024,
+      "error_cartera_pct": 100.45111569034518,
+      "spearman_ingreso": 0.5801968409224214,
+      "captura_top10_pct": 56.54955242988232,
+      "captura_top20_pct": 71.10185246637651
+    },
+    {
+      "modelo": "BG/NBD + Gamma-Gamma",
+      "clientes_entrenamiento": 4944,
+      "auc_recompra": 0.8100558878989979,
+      "brier_recompra": 0.17736043664016765,
+      "mae_compras": 1.0450048601369688,
+      "rmse_compras": 1.7836336503381538,
+      "sesgo_compras_pct": -1.3945894506564769,
+      "spearman_compras": 0.6244794984659778,
+      "mae_ingreso_gbp": 485.8186443359799,
+      "rmse_ingreso_gbp": 1278.6055963269569,
+      "error_cartera_pct": -10.04186757680437,
+      "spearman_ingreso": 0.6355222671496945,
+      "captura_top10_pct": 57.070468774196904,
+      "captura_top20_pct": 72.02426644395695
+    }
+  ]
+}

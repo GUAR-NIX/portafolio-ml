@@ -1,0 +1,8 @@
+{
+  "filas_demanda_horaria": 2196000,
+  "estaciones": 250,
+  "total_salidas": 18176018,
+  "total_llegadas": 18076772,
+  "periodo_inicio": "2024-01-01 00:00:00",
+  "periodo_fin": "2024-12-31 23:00:00"
+}

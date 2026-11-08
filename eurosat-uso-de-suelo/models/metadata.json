@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "backbone": "MobileNetV3-Small (ImageNet-1K) + 54 índices espectrales Sentinel-2",
+  "particiones": {
+    "entrenamiento": 16200,
+    "validacion": 5400,
+    "prueba": 5400
+  },
+  "exactitud_top1_test_m5": 0.9698,
+  "f1_macro_test_m5": 0.9688,
+  "umbral_abstencion_validacion": 0.85,
+  "temperaturas_validacion": {
+    "m1": 1.2158246608257413,
+    "m2": 1.9119903055054335,
+    "m3": 1.9992758374285706,
+    "m4": 0.7196263736507529,
+    "m5": 0.8506730983272364
+  },
+  "peso_ensamble_finetuning": 0.75
+}

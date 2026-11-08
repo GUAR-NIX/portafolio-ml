@@ -1,0 +1,4 @@
+variante,auc,average_precision
+Con duración (fuga),0.9522,0.6734
+Con nº de llamadas de la campaña,0.8152,0.4945
+Sin variables con fuga (modelo final),0.8146,0.4896

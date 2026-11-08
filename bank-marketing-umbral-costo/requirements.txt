@@ -1,0 +1,20 @@
+# Versiones con las que se ejecutó y probó el proyecto (Python 3.14)
+# Modelo y datos
+lightgbm==4.7.0
+scikit-learn==1.9.1
+imbalanced-learn==0.14.2
+pandas==3.0.6
+numpy==2.5.4
+scipy==1.18.1
+joblib==1.6.0
+matplotlib==3.11.2
+shap==0.54.1
+# Servicio
+fastapi==0.150.0
+uvicorn==0.54.0
+pydantic==2.14.1
+httpx==0.28.1
+# Notebooks y pruebas
+jupyter==1.1.1
+nbconvert==7.17.2
+pytest==9.1.1

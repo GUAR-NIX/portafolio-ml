@@ -1,0 +1,4 @@
+particion,desde_h,hasta_h,horas,transacciones,fraudes,tasa_fraude_pct,monto_fraude_eur
+entrenamiento,0.0,33.44,33.44,170882,360,0.2107,40167.62
+validacion,33.44,40.35,6.9,56963,57,0.1001,12231.09
+prueba,40.35,48.0,7.65,56962,75,0.1317,7729.26

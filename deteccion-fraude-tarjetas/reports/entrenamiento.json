@@ -1,0 +1,53 @@
+{
+  "esquema_desbalance_elegido": "lgbm_pesos",
+  "razon_normales_por_fraude_entrenamiento": 473.6722222222222,
+  "razon_submuestreo": 20,
+  "modelo_servido": "lgbm_pesos",
+  "autoencoder": {
+    "epocas": 40,
+    "mse_normales_reservadas": 0.34122541546821594
+  },
+  "tiempos": {
+    "regla_monto": {
+      "entrenamiento_s": 0.0,
+      "puntuar_prueba_ms_por_1000": 0.001
+    },
+    "logistica": {
+      "entrenamiento_s": 0.32,
+      "puntuar_prueba_ms_por_1000": 0.206
+    },
+    "if_sin_etiquetas": {
+      "entrenamiento_s": 0.66,
+      "puntuar_prueba_ms_por_1000": 7.827
+    },
+    "if_normales": {
+      "entrenamiento_s": 0.63,
+      "puntuar_prueba_ms_por_1000": 7.936
+    },
+    "lof": {
+      "entrenamiento_s": 1.46,
+      "puntuar_prueba_ms_por_1000": 33.419
+    },
+    "autoencoder": {
+      "entrenamiento_s": 22.85,
+      "puntuar_prueba_ms_por_1000": 1.514
+    },
+    "lgbm_sin_ajuste": {
+      "entrenamiento_s": 8.23,
+      "puntuar_prueba_ms_por_1000": 7.396
+    },
+    "lgbm_pesos": {
+      "entrenamiento_s": 11.61,
+      "puntuar_prueba_ms_por_1000": 9.854
+    },
+    "lgbm_submuestreo": {
+      "entrenamiento_s": 4.79,
+      "puntuar_prueba_ms_por_1000": 10.427
+    },
+    "hibrido": {
+      "entrenamiento_s": 39.37,
+      "puntuar_prueba_ms_por_1000": 23.141
+    }
+  },
+  "segundos_entrenamiento": 129.2
+}

@@ -1,0 +1,20 @@
+variable,shap_medio_abs,etiqueta
+num_empleados,0.29071,Nº de empleados (economía)
+euribor_3m,0.17475,Euríbor 3 meses
+tipo_contacto,0.16073,Tipo de teléfono
+mes,0.13427,Mes del contacto
+var_empleo,0.11988,Variación del empleo
+edad,0.05657,Edad
+dia_semana,0.05381,Día de la semana
+dias_desde_contacto,0.04719,Días desde el último contacto
+ipc,0.04718,Índice de precios (IPC)
+resultado_previo,0.04362,Resultado campaña anterior
+ocupacion,0.03311,Ocupación
+confianza_consumidor,0.03301,Confianza del consumidor
+educacion,0.02752,Educación
+mora,0.02579,Crédito en mora
+contactado_antes,0.01914,Contactado antes
+hipoteca,0.01714,Tiene hipoteca
+estado_civil,0.01208,Estado civil
+contactos_previos,0.00718,Contactos previos
+prestamo,0.00693,Tiene préstamo personal

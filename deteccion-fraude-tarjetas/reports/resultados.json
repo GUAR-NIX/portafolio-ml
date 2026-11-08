@@ -1,0 +1,1053 @@
+{
+  "datos": {
+    "filas": 284807,
+    "fraudes": 492,
+    "tasa_fraude_pct": 0.1727485630620034,
+    "duplicados_exactos": 1081,
+    "monto_fraude_total_eur": 60127.97,
+    "monto_fraude_mediana_eur": 9.25,
+    "monto_normal_mediana_eur": 22.0
+  },
+  "particion": [
+    {
+      "particion": "entrenamiento",
+      "desde_h": 0.0,
+      "hasta_h": 33.44,
+      "horas": 33.44,
+      "transacciones": 170882,
+      "fraudes": 360,
+      "tasa_fraude_pct": 0.2107,
+      "monto_fraude_eur": 40167.62
+    },
+    {
+      "particion": "validacion",
+      "desde_h": 33.44,
+      "hasta_h": 40.35,
+      "horas": 6.9,
+      "transacciones": 56963,
+      "fraudes": 57,
+      "tasa_fraude_pct": 0.1001,
+      "monto_fraude_eur": 12231.09
+    },
+    {
+      "particion": "prueba",
+      "desde_h": 40.35,
+      "hasta_h": 48.0,
+      "horas": 7.65,
+      "transacciones": 56962,
+      "fraudes": 75,
+      "tasa_fraude_pct": 0.1317,
+      "monto_fraude_eur": 7729.26
+    }
+  ],
+  "capacidad": {
+    "alertas_por_dia": 250,
+    "k_validacion": 72,
+    "k_prueba": 80
+  },
+  "supuestos_costo": {
+    "costo_revision_eur": 5.0,
+    "fraccion_perdida": 1.0
+  },
+  "entrenamiento": {
+    "esquema_desbalance_elegido": "lgbm_pesos",
+    "razon_normales_por_fraude_entrenamiento": 473.6722222222222,
+    "razon_submuestreo": 20,
+    "modelo_servido": "lgbm_pesos",
+    "autoencoder": {
+      "epocas": 40,
+      "mse_normales_reservadas": 0.34122541546821594
+    },
+    "tiempos": {
+      "regla_monto": {
+        "entrenamiento_s": 0.0,
+        "puntuar_prueba_ms_por_1000": 0.001
+      },
+      "logistica": {
+        "entrenamiento_s": 0.32,
+        "puntuar_prueba_ms_por_1000": 0.206
+      },
+      "if_sin_etiquetas": {
+        "entrenamiento_s": 0.66,
+        "puntuar_prueba_ms_por_1000": 7.827
+      },
+      "if_normales": {
+        "entrenamiento_s": 0.63,
+        "puntuar_prueba_ms_por_1000": 7.936
+      },
+      "lof": {
+        "entrenamiento_s": 1.46,
+        "puntuar_prueba_ms_por_1000": 33.419
+      },
+      "autoencoder": {
+        "entrenamiento_s": 22.85,
+        "puntuar_prueba_ms_por_1000": 1.514
+      },
+      "lgbm_sin_ajuste": {
+        "entrenamiento_s": 8.23,
+        "puntuar_prueba_ms_por_1000": 7.396
+      },
+      "lgbm_pesos": {
+        "entrenamiento_s": 11.61,
+        "puntuar_prueba_ms_por_1000": 9.854
+      },
+      "lgbm_submuestreo": {
+        "entrenamiento_s": 4.79,
+        "puntuar_prueba_ms_por_1000": 10.427
+      },
+      "hibrido": {
+        "entrenamiento_s": 39.37,
+        "puntuar_prueba_ms_por_1000": 23.141
+      }
+    },
+    "segundos_entrenamiento": 129.2
+  },
+  "mejor_no_supervisado": "lof",
+  "modelo_servido": "lgbm_pesos",
+  "metricas_prueba": [
+    {
+      "modelo": "regla_monto",
+      "nombre": "Regla por monto",
+      "familia": "Línea base",
+      "auprc": 0.0014479842074899473,
+      "roc_auc": 0.3820288173630765,
+      "precision_at_80": 0.0,
+      "recall_at_80": 0.0,
+      "recall_a_precision_80": 0.0,
+      "recall_a_precision_90": 0.0,
+      "auprc_ic_inf": 0.0009663402710095736,
+      "precision_at_80_ic_inf": 0.0,
+      "recall_a_precision_80_ic_inf": 0.0,
+      "recall_a_precision_90_ic_inf": 0.0,
+      "recall_at_80_ic_inf": 0.0,
+      "roc_auc_ic_inf": 0.3036261473372229,
+      "auprc_ic_sup": 0.0027636777586132547,
+      "precision_at_80_ic_sup": 0.0,
+      "recall_a_precision_80_ic_sup": 0.0,
+      "recall_a_precision_90_ic_sup": 0.0,
+      "recall_at_80_ic_sup": 0.0,
+      "roc_auc_ic_sup": 0.46817378549720473,
+      "auprc_validacion": 0.0019950840505115587
+    },
+    {
+      "modelo": "logistica",
+      "nombre": "Regresión logística",
+      "familia": "Línea base",
+      "auprc": 0.683798444668016,
+      "roc_auc": 0.9723161120584083,
+      "precision_at_80": 0.675,
+      "recall_at_80": 0.72,
+      "recall_a_precision_80": 0.49333333333333335,
+      "recall_a_precision_90": 0.44,
+      "auprc_ic_inf": 0.5634012837652985,
+      "precision_at_80_ic_inf": 0.49382716049382713,
+      "recall_a_precision_80_ic_inf": 0.33783783783783783,
+      "recall_a_precision_90_ic_inf": 0.2351102941176471,
+      "recall_at_80_ic_inf": 0.5897435897435898,
+      "roc_auc_ic_inf": 0.949766773200302,
+      "auprc_ic_sup": 0.7823842758329784,
+      "precision_at_80_ic_sup": 0.775,
+      "recall_a_precision_80_ic_sup": 0.7325775193798449,
+      "recall_a_precision_90_ic_sup": 0.5588940370668815,
+      "recall_at_80_ic_sup": 0.8,
+      "roc_auc_ic_sup": 0.9897049873682033,
+      "auprc_validacion": 0.6203097403696167
+    },
+    {
+      "modelo": "if_sin_etiquetas",
+      "nombre": "Isolation Forest (sin etiquetas)",
+      "familia": "No supervisado",
+      "auprc": 0.03523918156430878,
+      "roc_auc": 0.949532464945125,
+      "precision_at_80": 0.0,
+      "recall_at_80": 0.0,
+      "recall_a_precision_80": 0.0,
+      "recall_a_precision_90": 0.0,
+      "auprc_ic_inf": 0.025280894058173537,
+      "precision_at_80_ic_inf": 0.0,
+      "recall_a_precision_80_ic_inf": 0.0,
+      "recall_a_precision_90_ic_inf": 0.0,
+      "recall_at_80_ic_inf": 0.0,
+      "roc_auc_ic_inf": 0.9255929843645936,
+      "auprc_ic_sup": 0.049549931754369274,
+      "precision_at_80_ic_sup": 0.0125,
+      "recall_a_precision_80_ic_sup": 0.0,
+      "recall_a_precision_90_ic_sup": 0.0,
+      "recall_at_80_ic_sup": 0.01449808184143222,
+      "roc_auc_ic_sup": 0.9692305041133961,
+      "auprc_validacion": 0.022057522073829106
+    },
+    {
+      "modelo": "if_normales",
+      "nombre": "Isolation Forest (solo normales)",
+      "familia": "No supervisado",
+      "auprc": 0.03189679349963248,
+      "roc_auc": 0.9486697019236966,
+      "precision_at_80": 0.0,
+      "recall_at_80": 0.0,
+      "recall_a_precision_80": 0.0,
+      "recall_a_precision_90": 0.0,
+      "auprc_ic_inf": 0.022515366742827787,
+      "precision_at_80_ic_inf": 0.0,
+      "recall_a_precision_80_ic_inf": 0.0,
+      "recall_a_precision_90_ic_inf": 0.0,
+      "recall_at_80_ic_inf": 0.0,
+      "roc_auc_ic_inf": 0.9256043142201859,
+      "auprc_ic_sup": 0.044883549503046564,
+      "precision_at_80_ic_sup": 0.0,
+      "recall_a_precision_80_ic_sup": 0.0,
+      "recall_a_precision_90_ic_sup": 0.0,
+      "recall_at_80_ic_sup": 0.0,
+      "roc_auc_ic_sup": 0.9676807643536386,
+      "auprc_validacion": 0.021136921143651035
+    },
+    {
+      "modelo": "lof",
+      "nombre": "LOF novelty (solo normales)",
+      "familia": "No supervisado",
+      "auprc": 0.4889754383349021,
+      "roc_auc": 0.936060142621923,
+      "precision_at_80": 0.55,
+      "recall_at_80": 0.5866666666666667,
+      "recall_a_precision_80": 0.26666666666666666,
+      "recall_a_precision_90": 0.0,
+      "auprc_ic_inf": 0.3658073504156444,
+      "precision_at_80_ic_inf": 0.41975308641975306,
+      "recall_a_precision_80_ic_inf": 0.0,
+      "recall_a_precision_90_ic_inf": 0.0,
+      "recall_at_80_ic_inf": 0.5,
+      "roc_auc_ic_inf": 0.8960121184440554,
+      "auprc_ic_sup": 0.6187414761218121,
+      "precision_at_80_ic_sup": 0.6875,
+      "recall_a_precision_80_ic_sup": 0.47440476190476183,
+      "recall_a_precision_90_ic_sup": 0.3214573732718894,
+      "recall_at_80_ic_sup": 0.6949666153055983,
+      "roc_auc_ic_sup": 0.9691516630001946,
+      "auprc_validacion": 0.41227087184644845
+    },
+    {
+      "modelo": "autoencoder",
+      "nombre": "Autoencoder (solo normales)",
+      "familia": "No supervisado",
+      "auprc": 0.08425111225338056,
+      "roc_auc": 0.928381997058496,
+      "precision_at_80": 0.025,
+      "recall_at_80": 0.02666666666666667,
+      "recall_a_precision_80": 0.0,
+      "recall_a_precision_90": 0.0,
+      "auprc_ic_inf": 0.05930398430947246,
+      "precision_at_80_ic_inf": 0.0,
+      "recall_a_precision_80_ic_inf": 0.0,
+      "recall_a_precision_90_ic_inf": 0.0,
+      "recall_at_80_ic_inf": 0.0,
+      "roc_auc_ic_inf": 0.8870899718410015,
+      "auprc_ic_sup": 0.11992409511065359,
+      "precision_at_80_ic_sup": 0.1125,
+      "recall_a_precision_80_ic_sup": 0.0,
+      "recall_a_precision_90_ic_sup": 0.0,
+      "recall_at_80_ic_sup": 0.12197261446298671,
+      "roc_auc_ic_sup": 0.9593208551278238,
+      "auprc_validacion": 0.0389664440028347
+    },
+    {
+      "modelo": "lgbm_sin_ajuste",
+      "nombre": "LightGBM sin ajuste",
+      "familia": "Supervisado",
+      "auprc": 0.8005726465556673,
+      "roc_auc": 0.9810827312625614,
+      "precision_at_80": 0.725,
+      "recall_at_80": 0.7733333333333333,
+      "recall_a_precision_80": 0.76,
+      "recall_a_precision_90": 0.7466666666666667,
+      "auprc_ic_inf": 0.7104069029856445,
+      "precision_at_80_ic_inf": 0.5555555555555556,
+      "recall_a_precision_80_ic_inf": 0.6490919199406968,
+      "recall_a_precision_90_ic_inf": 0.592046221322537,
+      "recall_at_80_ic_inf": 0.6849134823359769,
+      "roc_auc_ic_inf": 0.9663134068021285,
+      "auprc_ic_sup": 0.8742477132819236,
+      "precision_at_80_ic_sup": 0.8875,
+      "recall_a_precision_80_ic_sup": 0.8524710703953712,
+      "recall_a_precision_90_ic_sup": 0.8354524844133762,
+      "recall_at_80_ic_sup": 0.8593818530701754,
+      "roc_auc_ic_sup": 0.9930964942641199,
+      "auprc_validacion": 0.7850732470231643
+    },
+    {
+      "modelo": "lgbm_pesos",
+      "nombre": "LightGBM con pesos",
+      "familia": "Supervisado",
+      "auprc": 0.7820992857236253,
+      "roc_auc": 0.9282284763361283,
+      "precision_at_80": 0.725,
+      "recall_at_80": 0.7733333333333333,
+      "recall_a_precision_80": 0.76,
+      "recall_a_precision_90": 0.7466666666666667,
+      "auprc_ic_inf": 0.6823930044131504,
+      "precision_at_80_ic_inf": 0.5308456046407853,
+      "recall_a_precision_80_ic_inf": 0.6447143114635905,
+      "recall_a_precision_90_ic_inf": 0.631578947368421,
+      "recall_at_80_ic_inf": 0.6714236790606654,
+      "roc_auc_ic_inf": 0.8775263770428673,
+      "auprc_ic_sup": 0.865433374981889,
+      "precision_at_80_ic_sup": 0.8875,
+      "recall_a_precision_80_ic_sup": 0.85,
+      "recall_a_precision_90_ic_sup": 0.8372250157133878,
+      "recall_at_80_ic_sup": 0.8513638638638639,
+      "roc_auc_ic_sup": 0.96872531626555,
+      "auprc_validacion": 0.8003436737396366
+    },
+    {
+      "modelo": "lgbm_submuestreo",
+      "nombre": "LightGBM con submuestreo 1:20",
+      "familia": "Supervisado",
+      "auprc": 0.8067935188394687,
+      "roc_auc": 0.9839152471859417,
+      "precision_at_80": 0.7375,
+      "recall_at_80": 0.7866666666666666,
+      "recall_a_precision_80": 0.76,
+      "recall_a_precision_90": 0.76,
+      "auprc_ic_inf": 0.7147662764154079,
+      "precision_at_80_ic_inf": 0.5555555555555556,
+      "recall_a_precision_80_ic_inf": 0.6614473684210527,
+      "recall_a_precision_90_ic_inf": 0.6348370927318295,
+      "recall_at_80_ic_inf": 0.6947295321637428,
+      "roc_auc_ic_inf": 0.9722939796270313,
+      "auprc_ic_sup": 0.8828838207279237,
+      "precision_at_80_ic_sup": 0.9,
+      "recall_a_precision_80_ic_sup": 0.8701508169250104,
+      "recall_a_precision_90_ic_sup": 0.8461764705882353,
+      "recall_at_80_ic_sup": 0.8701298701298701,
+      "roc_auc_ic_sup": 0.993912122312706,
+      "auprc_validacion": 0.780509265610678
+    },
+    {
+      "modelo": "hibrido",
+      "nombre": "Híbrido: LightGBM + anomalías",
+      "familia": "Híbrido",
+      "auprc": 0.779726274012897,
+      "roc_auc": 0.9236777002361405,
+      "precision_at_80": 0.7125,
+      "recall_at_80": 0.76,
+      "recall_a_precision_80": 0.76,
+      "recall_a_precision_90": 0.7333333333333333,
+      "auprc_ic_inf": 0.678761371765675,
+      "precision_at_80_ic_inf": 0.5308641975308642,
+      "recall_a_precision_80_ic_inf": 0.6485909690177983,
+      "recall_a_precision_90_ic_inf": 0.6215740388275599,
+      "recall_at_80_ic_inf": 0.6623285165538687,
+      "roc_auc_ic_inf": 0.8739387850303927,
+      "auprc_ic_sup": 0.8597130321821939,
+      "precision_at_80_ic_sup": 0.8889227642276422,
+      "recall_a_precision_80_ic_sup": 0.8488372093023255,
+      "recall_a_precision_90_ic_sup": 0.8356562599553998,
+      "recall_at_80_ic_sup": 0.8488426941641071,
+      "roc_auc_ic_sup": 0.9662037568309739,
+      "auprc_validacion": 0.7910850652080982
+    }
+  ],
+  "diferencias": [
+    {
+      "comparacion": "hibrido − lgbm_pesos",
+      "modelo_a": "hibrido",
+      "modelo_b": "lgbm_pesos",
+      "metrica": "auprc",
+      "diferencia_media": -0.0024950873550465954,
+      "ic_inf": -0.0165257111255773,
+      "ic_sup": 0.011669066050529728,
+      "prob_a_mejor": 0.356,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_pesos − lof",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "lof",
+      "metrica": "auprc",
+      "diferencia_media": 0.28415343379747593,
+      "ic_inf": 0.1837809960161573,
+      "ic_sup": 0.3867674828660006,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "lgbm_pesos − logistica",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "logistica",
+      "metrica": "auprc",
+      "diferencia_media": 0.09758543698058057,
+      "ic_inf": 0.034330250423563434,
+      "ic_sup": 0.17207257306233734,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "lgbm_pesos − lgbm_submuestreo",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "lgbm_submuestreo",
+      "metrica": "auprc",
+      "diferencia_media": -0.024521149153724706,
+      "ic_inf": -0.0627429139982822,
+      "ic_sup": 0.004368241394819305,
+      "prob_a_mejor": 0.06,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_pesos − lgbm_sin_ajuste",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "lgbm_sin_ajuste",
+      "metrica": "auprc",
+      "diferencia_media": -0.018559708992577407,
+      "ic_inf": -0.054064173850319606,
+      "ic_sup": 0.010318735914921525,
+      "prob_a_mejor": 0.113,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_submuestreo − lgbm_sin_ajuste",
+      "modelo_a": "lgbm_submuestreo",
+      "modelo_b": "lgbm_sin_ajuste",
+      "metrica": "auprc",
+      "diferencia_media": 0.005961440161147301,
+      "ic_inf": -0.004983506725761764,
+      "ic_sup": 0.019641576392630023,
+      "prob_a_mejor": 0.836,
+      "significativa": false
+    },
+    {
+      "comparacion": "logistica − lof",
+      "modelo_a": "logistica",
+      "modelo_b": "lof",
+      "metrica": "auprc",
+      "diferencia_media": 0.18656799681689537,
+      "ic_inf": 0.10297058059804393,
+      "ic_sup": 0.27938793429481623,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "lof − autoencoder",
+      "modelo_a": "lof",
+      "modelo_b": "autoencoder",
+      "metrica": "auprc",
+      "diferencia_media": 0.41058193006281424,
+      "ic_inf": 0.30017712030131466,
+      "ic_sup": 0.5166769206988595,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "autoencoder − if_normales",
+      "modelo_a": "autoencoder",
+      "modelo_b": "if_normales",
+      "metrica": "auprc",
+      "diferencia_media": 0.05377074077980361,
+      "ic_inf": 0.03495683378330254,
+      "ic_sup": 0.07662417601249143,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "if_normales − if_sin_etiquetas",
+      "modelo_a": "if_normales",
+      "modelo_b": "if_sin_etiquetas",
+      "metrica": "auprc",
+      "diferencia_media": -0.0035565321733422917,
+      "ic_inf": -0.006282516689960739,
+      "ic_sup": -0.0014001593373345357,
+      "prob_a_mejor": 0.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "hibrido − lgbm_pesos",
+      "modelo_a": "hibrido",
+      "modelo_b": "lgbm_pesos",
+      "metrica": "precision_at_80",
+      "diferencia_media": -0.003996630926780002,
+      "ic_inf": -0.03749999999999998,
+      "ic_sup": 0.028072869617585067,
+      "prob_a_mejor": 0.27,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_pesos − lof",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "lof",
+      "metrica": "precision_at_80",
+      "diferencia_media": 0.1609634455278093,
+      "ic_inf": 0.06548762121657362,
+      "ic_sup": 0.25723379629629617,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "lgbm_pesos − logistica",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "logistica",
+      "metrica": "precision_at_80",
+      "diferencia_media": 0.05938052027212643,
+      "ic_inf": -0.011905028651190119,
+      "ic_sup": 0.17500000000000004,
+      "prob_a_mejor": 0.94,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_pesos − lgbm_submuestreo",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "lgbm_submuestreo",
+      "metrica": "precision_at_80",
+      "diferencia_media": -0.018033679157597043,
+      "ic_inf": -0.0649935072267389,
+      "ic_sup": 0.02499999999999991,
+      "prob_a_mejor": 0.144,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_pesos − lgbm_sin_ajuste",
+      "modelo_a": "lgbm_pesos",
+      "modelo_b": "lgbm_sin_ajuste",
+      "metrica": "precision_at_80",
+      "diferencia_media": -0.009427271472307212,
+      "ic_inf": -0.050000000000000044,
+      "ic_sup": 0.03141102884243124,
+      "prob_a_mejor": 0.246,
+      "significativa": false
+    },
+    {
+      "comparacion": "lgbm_submuestreo − lgbm_sin_ajuste",
+      "modelo_a": "lgbm_submuestreo",
+      "modelo_b": "lgbm_sin_ajuste",
+      "metrica": "precision_at_80",
+      "diferencia_media": 0.008606407685289834,
+      "ic_inf": -0.025000000000000022,
+      "ic_sup": 0.049398148148148135,
+      "prob_a_mejor": 0.569,
+      "significativa": false
+    },
+    {
+      "comparacion": "logistica − lof",
+      "modelo_a": "logistica",
+      "modelo_b": "lof",
+      "metrica": "precision_at_80",
+      "diferencia_media": 0.10158292525568288,
+      "ic_inf": 0.01218768366147518,
+      "ic_sup": 0.1875,
+      "prob_a_mejor": 0.986,
+      "significativa": true
+    },
+    {
+      "comparacion": "lof − autoencoder",
+      "modelo_a": "lof",
+      "modelo_b": "autoencoder",
+      "metrica": "precision_at_80",
+      "diferencia_media": 0.5137088759516363,
+      "ic_inf": 0.3822492283950617,
+      "ic_sup": 0.6625,
+      "prob_a_mejor": 1.0,
+      "significativa": true
+    },
+    {
+      "comparacion": "autoencoder − if_normales",
+      "modelo_a": "autoencoder",
+      "modelo_b": "if_normales",
+      "metrica": "precision_at_80",
+      "diferencia_media": 0.03705944119101259,
+      "ic_inf": 0.0,
+      "ic_sup": 0.1125,
+      "prob_a_mejor": 0.615,
+      "significativa": false
+    },
+    {
+      "comparacion": "if_normales − if_sin_etiquetas",
+      "modelo_a": "if_normales",
+      "modelo_b": "if_sin_etiquetas",
+      "metrica": "precision_at_80",
+      "diferencia_media": -0.0008714768287241105,
+      "ic_inf": -0.0125,
+      "ic_sup": 0.0,
+      "prob_a_mejor": 0.0,
+      "significativa": false
+    }
+  ],
+  "costo_prueba": [
+    {
+      "modelo": "regla_monto",
+      "nombre": "Regla por monto",
+      "politica": "umbral por costo en validación",
+      "umbral": 7.662406694385525,
+      "costo_validacion_eur": 10850.220000000001,
+      "alertas": 98,
+      "fraudes_detectados": 0,
+      "fraudes_perdidos": 75,
+      "falsas_alertas": 98,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 0.0,
+      "costo_alertas_eur": 490.0,
+      "perdida_no_detectada_eur": 7729.26,
+      "costo_total_eur": 8219.26,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 4124.5395,
+      "costo_ic_sup": 13397.09925,
+      "ahorro_vs_sin_modelo_pct": -6.33954608850007
+    },
+    {
+      "modelo": "logistica",
+      "nombre": "Regresión logística",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.09098173941524978,
+      "costo_validacion_eur": 4899.33,
+      "alertas": 88,
+      "fraudes_detectados": 54,
+      "fraudes_perdidos": 21,
+      "falsas_alertas": 34,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 4730.139999999999,
+      "costo_alertas_eur": 440.0,
+      "perdida_no_detectada_eur": 2999.12,
+      "costo_total_eur": 3439.12,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1305.6707500000002,
+      "costo_ic_sup": 6495.193499999998,
+      "ahorro_vs_sin_modelo_pct": 55.505184196158496
+    },
+    {
+      "modelo": "if_sin_etiquetas",
+      "nombre": "Isolation Forest (sin etiquetas)",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.5463308307288568,
+      "costo_validacion_eur": 9252.58,
+      "alertas": 1018,
+      "fraudes_detectados": 44,
+      "fraudes_perdidos": 31,
+      "falsas_alertas": 974,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 4314.6900000000005,
+      "costo_alertas_eur": 5090.0,
+      "perdida_no_detectada_eur": 3414.5699999999997,
+      "costo_total_eur": 8504.57,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 6221.1415,
+      "costo_ic_sup": 11658.583999999997,
+      "ahorro_vs_sin_modelo_pct": -10.030843832397917
+    },
+    {
+      "modelo": "if_normales",
+      "nombre": "Isolation Forest (solo normales)",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.5608978715704677,
+      "costo_validacion_eur": 9233.34,
+      "alertas": 906,
+      "fraudes_detectados": 39,
+      "fraudes_perdidos": 36,
+      "falsas_alertas": 867,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 3915.92,
+      "costo_alertas_eur": 4530.0,
+      "perdida_no_detectada_eur": 3813.34,
+      "costo_total_eur": 8343.34,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 5957.40375,
+      "costo_ic_sup": 11616.929499999998,
+      "ahorro_vs_sin_modelo_pct": -7.9448744122982085
+    },
+    {
+      "modelo": "lof",
+      "nombre": "LOF novelty (solo normales)",
+      "politica": "umbral por costo en validación",
+      "umbral": 2.3982666383107087,
+      "costo_validacion_eur": 5302.09,
+      "alertas": 166,
+      "fraudes_detectados": 54,
+      "fraudes_perdidos": 21,
+      "falsas_alertas": 112,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 3961.08,
+      "costo_alertas_eur": 830.0,
+      "perdida_no_detectada_eur": 3768.18,
+      "costo_total_eur": 4598.18,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1754.02775,
+      "costo_ic_sup": 8238.020249999998,
+      "ahorro_vs_sin_modelo_pct": 40.5094407485322
+    },
+    {
+      "modelo": "autoencoder",
+      "nombre": "Autoencoder (solo normales)",
+      "politica": "umbral por costo en validación",
+      "umbral": 4.066057492906925,
+      "costo_validacion_eur": 8269.43,
+      "alertas": 405,
+      "fraudes_detectados": 42,
+      "fraudes_perdidos": 33,
+      "falsas_alertas": 363,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 4302.38,
+      "costo_alertas_eur": 2025.0,
+      "perdida_no_detectada_eur": 3426.88,
+      "costo_total_eur": 5451.88,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 3150.71075,
+      "costo_ic_sup": 8481.58975,
+      "ahorro_vs_sin_modelo_pct": 29.46439892046586
+    },
+    {
+      "modelo": "lgbm_sin_ajuste",
+      "nombre": "LightGBM sin ajuste",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.0019194367643389726,
+      "costo_validacion_eur": 4630.119999999999,
+      "alertas": 172,
+      "fraudes_detectados": 62,
+      "fraudes_perdidos": 13,
+      "falsas_alertas": 110,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 5351.78,
+      "costo_alertas_eur": 860.0,
+      "perdida_no_detectada_eur": 2377.48,
+      "costo_total_eur": 3237.48,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1181.0670000000002,
+      "costo_ic_sup": 6141.9879999999985,
+      "ahorro_vs_sin_modelo_pct": 58.113972100822075
+    },
+    {
+      "modelo": "lgbm_pesos",
+      "nombre": "LightGBM con pesos",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.008803215141767046,
+      "costo_validacion_eur": 4009.3999999999996,
+      "alertas": 157,
+      "fraudes_detectados": 59,
+      "fraudes_perdidos": 16,
+      "falsas_alertas": 98,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 4863.740000000001,
+      "costo_alertas_eur": 785.0,
+      "perdida_no_detectada_eur": 2865.52,
+      "costo_total_eur": 3650.52,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1520.2190000000003,
+      "costo_ic_sup": 6719.826749999999,
+      "ahorro_vs_sin_modelo_pct": 52.770122883691315
+    },
+    {
+      "modelo": "lgbm_submuestreo",
+      "nombre": "LightGBM con submuestreo 1:20",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.9910695879291547,
+      "costo_validacion_eur": 4690.860000000001,
+      "alertas": 59,
+      "fraudes_detectados": 56,
+      "fraudes_perdidos": 19,
+      "falsas_alertas": 3,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 5090.23,
+      "costo_alertas_eur": 295.0,
+      "perdida_no_detectada_eur": 2639.03,
+      "costo_total_eur": 2934.03,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 836.3115000000001,
+      "costo_ic_sup": 5680.384249999999,
+      "ahorro_vs_sin_modelo_pct": 62.03996242848604
+    },
+    {
+      "modelo": "hibrido",
+      "nombre": "Híbrido: LightGBM + anomalías",
+      "politica": "umbral por costo en validación",
+      "umbral": 0.007117445647284405,
+      "costo_validacion_eur": 3866.95,
+      "alertas": 124,
+      "fraudes_detectados": 58,
+      "fraudes_perdidos": 17,
+      "falsas_alertas": 66,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 5091.990000000001,
+      "costo_alertas_eur": 620.0,
+      "perdida_no_detectada_eur": 2637.27,
+      "costo_total_eur": 3257.27,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1176.839,
+      "costo_ic_sup": 6007.5109999999995,
+      "ahorro_vs_sin_modelo_pct": 57.85793206594163
+    },
+    {
+      "modelo": "perdida_esperada",
+      "nombre": "LightGBM con pesos + regla p·monto > costo",
+      "politica": "pérdida esperada (Platt en validación)",
+      "umbral": NaN,
+      "costo_validacion_eur": 3740.1099999999997,
+      "alertas": 70,
+      "fraudes_detectados": 22,
+      "fraudes_perdidos": 53,
+      "falsas_alertas": 48,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 4800.85,
+      "costo_alertas_eur": 350.0,
+      "perdida_no_detectada_eur": 2928.4100000000003,
+      "costo_total_eur": 3278.4100000000003,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1190.1112500000002,
+      "costo_ic_sup": 6313.8305,
+      "ahorro_vs_sin_modelo_pct": 57.584425934694906
+    },
+    {
+      "modelo": "capacidad",
+      "nombre": "LightGBM con pesos · top 80 (capacidad 250/día)",
+      "politica": "capacidad fija",
+      "umbral": NaN,
+      "costo_validacion_eur": NaN,
+      "alertas": 80,
+      "fraudes_detectados": 58,
+      "fraudes_perdidos": 17,
+      "falsas_alertas": 22,
+      "monto_fraude_total_eur": 7729.26,
+      "monto_fraude_detectado_eur": 4846.35,
+      "costo_alertas_eur": 400.0,
+      "perdida_no_detectada_eur": 2882.9100000000003,
+      "costo_total_eur": 3282.9100000000003,
+      "costo_sin_modelo_eur": 7729.26,
+      "costo_ic_inf": 1172.71025,
+      "costo_ic_sup": 6320.3865,
+      "ahorro_vs_sin_modelo_pct": 57.52620561347399
+    }
+  ],
+  "platt": {
+    "a": 0.4709969540876379,
+    "b": -1.953011477592141
+  },
+  "pocas_etiquetas": {
+    "referencia_no_supervisado": "lof",
+    "auprc_referencia": 0.4889754383349021,
+    "n_fraudes_para_superar": {
+      "LightGBM con pesos": {
+        "primer_n": 100,
+        "n_estable": 360
+      },
+      "Regresión logística": {
+        "primer_n": 5,
+        "n_estable": 5
+      }
+    },
+    "curva": [
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 5,
+        "media": 0.27316288010757594,
+        "desv": 0.181692206402269,
+        "minimo": 0.007352806126961179
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 10,
+        "media": 0.20405629122825447,
+        "desv": 0.09823637846278832,
+        "minimo": 0.052628506733744605
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 20,
+        "media": 0.31524321297402486,
+        "desv": 0.1376571875971401,
+        "minimo": 0.01763205599835567
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 35,
+        "media": 0.3023046797556844,
+        "desv": 0.15026536689543543,
+        "minimo": 0.06842667045241921
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 50,
+        "media": 0.3480167716643293,
+        "desv": 0.16658201126298744,
+        "minimo": 0.10777413096117675
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 100,
+        "media": 0.5022239570196033,
+        "desv": 0.1535022522606778,
+        "minimo": 0.22548759417771727
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 200,
+        "media": 0.4396816246943751,
+        "desv": 0.19266283402088544,
+        "minimo": 0.20516616775778168
+      },
+      {
+        "modelo": "LightGBM con pesos",
+        "n_fraudes": 360,
+        "media": 0.7611828708404779,
+        "desv": NaN,
+        "minimo": 0.7611828708404779
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 5,
+        "media": 0.5910151376671118,
+        "desv": 0.09429618883008405,
+        "minimo": 0.4656011584356295
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 10,
+        "media": 0.5553819403241251,
+        "desv": 0.13931053882569178,
+        "minimo": 0.22336496760756755
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 20,
+        "media": 0.5338034537678298,
+        "desv": 0.06458613294172046,
+        "minimo": 0.4350933669584324
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 35,
+        "media": 0.5237871086887645,
+        "desv": 0.022994196711257145,
+        "minimo": 0.49796040559784077
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 50,
+        "media": 0.5713500722083088,
+        "desv": 0.030661389755029262,
+        "minimo": 0.5144996482686112
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 100,
+        "media": 0.5814494774892847,
+        "desv": 0.022748193642011777,
+        "minimo": 0.5500127881387306
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 200,
+        "media": 0.6298687921589827,
+        "desv": 0.034449240416450526,
+        "minimo": 0.5853760255151611
+      },
+      {
+        "modelo": "Regresión logística",
+        "n_fraudes": 360,
+        "media": 0.683798444668016,
+        "desv": NaN,
+        "minimo": 0.683798444668016
+      }
+    ]
+  },
+  "shap_top": [
+    {
+      "variable": "V14",
+      "shap_medio_abs": 0.8341945358814056,
+      "shap_medio_abs_fraudes": 8.82162083518595
+    },
+    {
+      "variable": "V11",
+      "shap_medio_abs": 0.7996343221373964,
+      "shap_medio_abs_fraudes": 1.0566871083678233
+    },
+    {
+      "variable": "V4",
+      "shap_medio_abs": 0.7305362367361915,
+      "shap_medio_abs_fraudes": 4.126426061968889
+    },
+    {
+      "variable": "V1",
+      "shap_medio_abs": 0.7228222733703403,
+      "shap_medio_abs_fraudes": 0.43973633605465484
+    },
+    {
+      "variable": "V8",
+      "shap_medio_abs": 0.6587466630965335,
+      "shap_medio_abs_fraudes": 1.0527192588575816
+    },
+    {
+      "variable": "V22",
+      "shap_medio_abs": 0.5711271746139416,
+      "shap_medio_abs_fraudes": 0.607617374621514
+    },
+    {
+      "variable": "V5",
+      "shap_medio_abs": 0.569947911331949,
+      "shap_medio_abs_fraudes": 0.29060319022088277
+    },
+    {
+      "variable": "V7",
+      "shap_medio_abs": 0.5265161855492819,
+      "shap_medio_abs_fraudes": 1.4031930212925652
+    }
+  ],
+  "deriva": {
+    "adversaria": {
+      "roc_auc": 0.9950878476948319,
+      "n": 60000,
+      "top_variables": {
+        "V1": 224798.3,
+        "V3": 153034.9,
+        "V25": 55903.6,
+        "V24": 44549.1,
+        "V5": 40966.9
+      }
+    },
+    "top_psi": [
+      {
+        "variable": "V1",
+        "psi": 1.5712810865611742,
+        "ks": 0.42323896196264577
+      },
+      {
+        "variable": "V3",
+        "psi": 1.4330321381645341,
+        "ks": 0.5197608863711172
+      },
+      {
+        "variable": "V28",
+        "psi": 1.0495187130878363,
+        "ks": 0.3609668567063615
+      },
+      {
+        "variable": "V25",
+        "psi": 0.4402548794524819,
+        "ks": 0.29589452170182534
+      },
+      {
+        "variable": "V15",
+        "psi": 0.39992497633889484,
+        "ks": 0.27724938164076673
+      }
+    ],
+    "corr_time_top": {
+      "V3": 0.44100084382749555,
+      "V11": 0.24890024278807746,
+      "V25": 0.2332903996001751,
+      "V15": 0.18358344001390206,
+      "V5": 0.17296305661967054
+    },
+    "por_dia": [
+      {
+        "dia": 1,
+        "transacciones": 144786,
+        "fraudes": 281,
+        "tasa_fraude_pct": 0.19407953807688588,
+        "monto_mediano_normal": 23.4,
+        "monto_mediano_fraude": 9.99
+      },
+      {
+        "dia": 2,
+        "transacciones": 140021,
+        "fraudes": 211,
+        "tasa_fraude_pct": 0.1506916819619914,
+        "monto_mediano_normal": 20.33,
+        "monto_mediano_fraude": 9.21
+      }
+    ]
+  },
+  "segundos_evaluacion": 37.4
+}

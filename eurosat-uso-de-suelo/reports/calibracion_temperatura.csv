@@ -1,0 +1,6 @@
+modelo,nombre,temperatura_validacion,ece_antes,ece_despues,log_loss_antes,log_loss_despues,brier_antes,brier_despues
+m1,1 · Espectral: 54 índices + textura + GBDT,1.2158,0.0273,0.0116,0.278,0.2703,0.1409,0.1389
+m2,2 · MobileNetV3 congelada + sonda lineal,1.912,0.0528,0.0077,0.3807,0.2883,0.1517,0.1421
+m3,3 · Fusión: embeddings CNN + 54 índices + MLP,1.9993,0.0347,0.0062,0.233,0.1689,0.089,0.0822
+m4,4 · Fine-tuning parcial MobileNetV3 (D4 + TTA),0.7196,0.044,0.0061,0.1399,0.1072,0.0552,0.0524
+m5,5 · Ensamble M3 + M4 (calibrado con temperatura),0.8507,0.0445,0.0059,0.1251,0.0966,0.0507,0.0474
